@@ -1,5 +1,11 @@
 package com.mycompany.bibliotecafei.gui;
 
+import com.mycompany.bibliotecafei.modelo.DataBaseConnection;
+import java.sql.Connection;
+import java.sql.SQLException;
+import java.util.logging.Level;
+import java.util.logging.Logger;
+
 public class GUIPrincipalBibliotecario extends javax.swing.JFrame {
     
     public GUIPrincipalBibliotecario() {
@@ -24,6 +30,8 @@ public class GUIPrincipalBibliotecario extends javax.swing.JFrame {
         labelSolicitarFolio = new javax.swing.JLabel();
         panelInformacion = new javax.swing.JPanel();
         labelTitulo = new javax.swing.JLabel();
+        labelFotoUsuario = new javax.swing.JLabel();
+        labelNombreUsuario = new javax.swing.JLabel();
         panelContenedor = new javax.swing.JPanel();
         panelMenuPrincipal = new javax.swing.JPanel();
         jLabel1 = new javax.swing.JLabel();
@@ -31,6 +39,18 @@ public class GUIPrincipalBibliotecario extends javax.swing.JFrame {
         jLabel2 = new javax.swing.JLabel();
         panelFormularioPrestamo = new javax.swing.JPanel();
         jLabel3 = new javax.swing.JLabel();
+        jTextField1 = new javax.swing.JTextField();
+        jScrollPane1 = new javax.swing.JScrollPane();
+        jTable1 = new javax.swing.JTable();
+        jLabel7 = new javax.swing.JLabel();
+        jLabel8 = new javax.swing.JLabel();
+        jTextField2 = new javax.swing.JTextField();
+        jScrollPane2 = new javax.swing.JScrollPane();
+        jTable2 = new javax.swing.JTable();
+        jLabel9 = new javax.swing.JLabel();
+        jButton1 = new javax.swing.JButton();
+        jLabel10 = new javax.swing.JLabel();
+        jButton2 = new javax.swing.JButton();
         panelFormularioRecurso = new javax.swing.JPanel();
         jLabel4 = new javax.swing.JLabel();
         panelBuscar = new javax.swing.JPanel();
@@ -196,24 +216,14 @@ public class GUIPrincipalBibliotecario extends javax.swing.JFrame {
         panelBackground.add(panelOpciones, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 70, 220, -1));
 
         panelInformacion.setBackground(new java.awt.Color(0, 81, 158));
+        panelInformacion.setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
 
         labelTitulo.setFont(new java.awt.Font("Segoe UI", 1, 36)); // NOI18N
         labelTitulo.setForeground(new java.awt.Color(255, 255, 255));
         labelTitulo.setText(" GAB UV");
-
-        javax.swing.GroupLayout panelInformacionLayout = new javax.swing.GroupLayout(panelInformacion);
-        panelInformacion.setLayout(panelInformacionLayout);
-        panelInformacionLayout.setHorizontalGroup(
-            panelInformacionLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGroup(panelInformacionLayout.createSequentialGroup()
-                .addGap(473, 473, 473)
-                .addComponent(labelTitulo, javax.swing.GroupLayout.PREFERRED_SIZE, 150, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addContainerGap(477, Short.MAX_VALUE))
-        );
-        panelInformacionLayout.setVerticalGroup(
-            panelInformacionLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addComponent(labelTitulo, javax.swing.GroupLayout.Alignment.TRAILING, javax.swing.GroupLayout.DEFAULT_SIZE, 70, Short.MAX_VALUE)
-        );
+        panelInformacion.add(labelTitulo, new org.netbeans.lib.awtextra.AbsoluteConstraints(473, 0, 150, 70));
+        panelInformacion.add(labelFotoUsuario, new org.netbeans.lib.awtextra.AbsoluteConstraints(1030, 10, 50, 50));
+        panelInformacion.add(labelNombreUsuario, new org.netbeans.lib.awtextra.AbsoluteConstraints(660, 21, 360, 30));
 
         panelBackground.add(panelInformacion, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 0, 1100, 70));
 
@@ -228,16 +238,16 @@ public class GUIPrincipalBibliotecario extends javax.swing.JFrame {
         panelMenuPrincipalLayout.setHorizontalGroup(
             panelMenuPrincipalLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(panelMenuPrincipalLayout.createSequentialGroup()
-                .addGap(365, 365, 365)
+                .addGap(309, 309, 309)
                 .addComponent(jLabel1)
-                .addContainerGap(416, Short.MAX_VALUE))
+                .addContainerGap(472, Short.MAX_VALUE))
         );
         panelMenuPrincipalLayout.setVerticalGroup(
             panelMenuPrincipalLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(panelMenuPrincipalLayout.createSequentialGroup()
-                .addGap(118, 118, 118)
+                .addGap(217, 217, 217)
                 .addComponent(jLabel1)
-                .addContainerGap(504, Short.MAX_VALUE))
+                .addContainerGap(405, Short.MAX_VALUE))
         );
 
         panelContenedor.add(panelMenuPrincipal, "card2");
@@ -267,23 +277,113 @@ public class GUIPrincipalBibliotecario extends javax.swing.JFrame {
 
         panelFormularioPrestamo.setBackground(new java.awt.Color(255, 255, 255));
 
-        jLabel3.setText("Formulario prestamo");
+        jLabel3.setText("No. Personal/Matricula:");
+
+        jTextField1.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                jTextField1ActionPerformed(evt);
+            }
+        });
+
+        jTable1.setModel(new javax.swing.table.DefaultTableModel(
+            new Object [][] {
+
+            },
+            new String [] {
+                "Nombre", "Correo", "Domicilio", "Teléfono"
+            }
+        ));
+        jScrollPane1.setViewportView(jTable1);
+
+        jLabel7.setText("Datos del usuario:");
+
+        jLabel8.setText("ID Recurso documental que se prestará:");
+
+        jTable2.setModel(new javax.swing.table.DefaultTableModel(
+            new Object [][] {
+
+            },
+            new String [] {
+                "Nombre", "Autor", "Estado", "Sección"
+            }
+        ));
+        jScrollPane2.setViewportView(jTable2);
+
+        jLabel9.setText("Datos del recurso documental:");
+
+        jButton1.setText("Prestar recurso");
+        jButton1.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                jButton1ActionPerformed(evt);
+            }
+        });
+
+        jLabel10.setFont(new java.awt.Font("Segoe UI", 0, 24)); // NOI18N
+        jLabel10.setText("Formulario para registro de préstamos a domicilio");
+
+        jButton2.setText("Cancelar");
+        jButton2.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                jButton2ActionPerformed(evt);
+            }
+        });
 
         javax.swing.GroupLayout panelFormularioPrestamoLayout = new javax.swing.GroupLayout(panelFormularioPrestamo);
         panelFormularioPrestamo.setLayout(panelFormularioPrestamoLayout);
         panelFormularioPrestamoLayout.setHorizontalGroup(
             panelFormularioPrestamoLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, panelFormularioPrestamoLayout.createSequentialGroup()
-                .addContainerGap(377, Short.MAX_VALUE)
-                .addComponent(jLabel3)
-                .addGap(364, 364, 364))
+            .addGroup(panelFormularioPrestamoLayout.createSequentialGroup()
+                .addGroup(panelFormularioPrestamoLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                    .addGroup(panelFormularioPrestamoLayout.createSequentialGroup()
+                        .addGap(27, 27, 27)
+                        .addGroup(panelFormularioPrestamoLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                            .addComponent(jLabel9)
+                            .addGroup(panelFormularioPrestamoLayout.createSequentialGroup()
+                                .addGap(0, 0, Short.MAX_VALUE)
+                                .addGroup(panelFormularioPrestamoLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
+                                    .addGroup(panelFormularioPrestamoLayout.createSequentialGroup()
+                                        .addComponent(jButton1)
+                                        .addGap(52, 52, 52)
+                                        .addComponent(jButton2))
+                                    .addGroup(panelFormularioPrestamoLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
+                                        .addComponent(jLabel7)
+                                        .addComponent(jTextField2, javax.swing.GroupLayout.PREFERRED_SIZE, 250, javax.swing.GroupLayout.PREFERRED_SIZE)
+                                        .addComponent(jLabel3)
+                                        .addComponent(jScrollPane1, javax.swing.GroupLayout.DEFAULT_SIZE, 826, Short.MAX_VALUE)
+                                        .addComponent(jLabel8)
+                                        .addComponent(jTextField1, javax.swing.GroupLayout.PREFERRED_SIZE, 250, javax.swing.GroupLayout.PREFERRED_SIZE)
+                                        .addComponent(jScrollPane2))))))
+                    .addGroup(panelFormularioPrestamoLayout.createSequentialGroup()
+                        .addGap(170, 170, 170)
+                        .addComponent(jLabel10)))
+                .addContainerGap(27, Short.MAX_VALUE))
         );
         panelFormularioPrestamoLayout.setVerticalGroup(
             panelFormularioPrestamoLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(panelFormularioPrestamoLayout.createSequentialGroup()
-                .addGap(97, 97, 97)
+                .addContainerGap(11, Short.MAX_VALUE)
+                .addComponent(jLabel10)
+                .addGap(52, 52, 52)
                 .addComponent(jLabel3)
-                .addContainerGap(525, Short.MAX_VALUE))
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                .addComponent(jTextField1, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
+                .addComponent(jLabel7)
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                .addComponent(jScrollPane1, javax.swing.GroupLayout.PREFERRED_SIZE, 144, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
+                .addComponent(jLabel8)
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                .addComponent(jTextField2, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
+                .addComponent(jLabel9)
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                .addComponent(jScrollPane2, javax.swing.GroupLayout.PREFERRED_SIZE, 144, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addGap(18, 18, 18)
+                .addGroup(panelFormularioPrestamoLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                    .addComponent(jButton1)
+                    .addComponent(jButton2))
+                .addGap(11, 11, 11))
         );
 
         panelContenedor.add(panelFormularioPrestamo, "card4");
@@ -417,6 +517,18 @@ public class GUIPrincipalBibliotecario extends javax.swing.JFrame {
         desactivarOpcionBuscarRecurso();
         activarOpcionSolicitarFolio();
     }//GEN-LAST:event_labelSolicitarFolioMouseClicked
+
+    private void jTextField1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jTextField1ActionPerformed
+        // TODO add your handling code here:
+    }//GEN-LAST:event_jTextField1ActionPerformed
+
+    private void jButton1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton1ActionPerformed
+        // TODO add your handling code here:
+    }//GEN-LAST:event_jButton1ActionPerformed
+
+    private void jButton2ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton2ActionPerformed
+        // TODO add your handling code here:
+    }//GEN-LAST:event_jButton2ActionPerformed
     
     private void activarMenuPrincipal(){
         panelMenuPrincipal.setVisible(true);
@@ -520,13 +632,27 @@ public class GUIPrincipalBibliotecario extends javax.swing.JFrame {
     }
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
+    private javax.swing.JButton jButton1;
+    private javax.swing.JButton jButton2;
     private javax.swing.JLabel jLabel1;
+    private javax.swing.JLabel jLabel10;
     private javax.swing.JLabel jLabel2;
     private javax.swing.JLabel jLabel3;
     private javax.swing.JLabel jLabel4;
     private javax.swing.JLabel jLabel5;
     private javax.swing.JLabel jLabel6;
+    private javax.swing.JLabel jLabel7;
+    private javax.swing.JLabel jLabel8;
+    private javax.swing.JLabel jLabel9;
+    private javax.swing.JScrollPane jScrollPane1;
+    private javax.swing.JScrollPane jScrollPane2;
+    private javax.swing.JTable jTable1;
+    private javax.swing.JTable jTable2;
+    private javax.swing.JTextField jTextField1;
+    private javax.swing.JTextField jTextField2;
     private javax.swing.JLabel labelBuscarRecurso;
+    private javax.swing.JLabel labelFotoUsuario;
+    private javax.swing.JLabel labelNombreUsuario;
     private javax.swing.JLabel labelRegistrarPrestamo;
     private javax.swing.JLabel labelRegistrarRecurso;
     private javax.swing.JLabel labelRegistrarUsuario;
