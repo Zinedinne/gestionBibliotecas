@@ -1,21 +1,26 @@
 package com.mycompany.bibliotecafei.gui;
 
 import com.mycompany.bibliotecafei.modelo.DataBaseConnection;
+import java.awt.Shape;
+import java.awt.geom.RoundRectangle2D;
 import java.sql.Connection;
 import java.sql.SQLException;
 import java.util.logging.Level;
 import java.util.logging.Logger;
+import javax.swing.border.LineBorder;
 
 public class GUIPrincipalBibliotecario extends javax.swing.JFrame {
     
     public GUIPrincipalBibliotecario() {
         initComponents();
+        setLocationRelativeTo(null);
     }
 
     @SuppressWarnings("unchecked")
     // <editor-fold defaultstate="collapsed" desc="Generated Code">//GEN-BEGIN:initComponents
     private void initComponents() {
 
+        jPanel1 = new javax.swing.JPanel();
         panelBackground = new javax.swing.JPanel();
         panelOpciones = new javax.swing.JPanel();
         panelRegistrarUsuario = new javax.swing.JPanel();
@@ -28,6 +33,7 @@ public class GUIPrincipalBibliotecario extends javax.swing.JFrame {
         labelBuscarRecurso = new javax.swing.JLabel();
         panelSolicitarFolio = new javax.swing.JPanel();
         labelSolicitarFolio = new javax.swing.JLabel();
+        jLabel11 = new javax.swing.JLabel();
         panelInformacion = new javax.swing.JPanel();
         labelTitulo = new javax.swing.JLabel();
         labelFotoUsuario = new javax.swing.JLabel();
@@ -48,15 +54,28 @@ public class GUIPrincipalBibliotecario extends javax.swing.JFrame {
         jScrollPane2 = new javax.swing.JScrollPane();
         jTable2 = new javax.swing.JTable();
         jLabel9 = new javax.swing.JLabel();
-        jButton1 = new javax.swing.JButton();
         jLabel10 = new javax.swing.JLabel();
-        jButton2 = new javax.swing.JButton();
+        botonPrestarRecurso = new javax.swing.JPanel();
+        jLabel12 = new javax.swing.JLabel();
+        botonCancelar = new javax.swing.JPanel();
+        jLabel13 = new javax.swing.JLabel();
         panelFormularioRecurso = new javax.swing.JPanel();
         jLabel4 = new javax.swing.JLabel();
         panelBuscar = new javax.swing.JPanel();
         jLabel5 = new javax.swing.JLabel();
         panelFormularioFolio = new javax.swing.JPanel();
         jLabel6 = new javax.swing.JLabel();
+
+        javax.swing.GroupLayout jPanel1Layout = new javax.swing.GroupLayout(jPanel1);
+        jPanel1.setLayout(jPanel1Layout);
+        jPanel1Layout.setHorizontalGroup(
+            jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGap(0, 100, Short.MAX_VALUE)
+        );
+        jPanel1Layout.setVerticalGroup(
+            jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGap(0, 100, Short.MAX_VALUE)
+        );
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
         setTitle("GUIPrincipal");
@@ -79,10 +98,10 @@ public class GUIPrincipalBibliotecario extends javax.swing.JFrame {
         );
         panelRegistrarUsuarioLayout.setVerticalGroup(
             panelRegistrarUsuarioLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGap(0, 124, Short.MAX_VALUE)
+            .addGap(0, 50, Short.MAX_VALUE)
         );
 
-        panelOpciones.add(panelRegistrarUsuario, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 0, 20, 124));
+        panelOpciones.add(panelRegistrarUsuario, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 40, 20, 50));
 
         labelRegistrarUsuario.setBackground(new java.awt.Color(0, 81, 158));
         labelRegistrarUsuario.setFont(new java.awt.Font("Segoe UI", 0, 18)); // NOI18N
@@ -95,7 +114,7 @@ public class GUIPrincipalBibliotecario extends javax.swing.JFrame {
                 labelRegistrarUsuarioMouseClicked(evt);
             }
         });
-        panelOpciones.add(labelRegistrarUsuario, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 0, 220, 124));
+        panelOpciones.add(labelRegistrarUsuario, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 40, 220, 50));
 
         panelRegistrarPrestamo.setBackground(new java.awt.Color(0, 81, 158));
         panelRegistrarPrestamo.setCursor(new java.awt.Cursor(java.awt.Cursor.HAND_CURSOR));
@@ -108,10 +127,10 @@ public class GUIPrincipalBibliotecario extends javax.swing.JFrame {
         );
         panelRegistrarPrestamoLayout.setVerticalGroup(
             panelRegistrarPrestamoLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGap(0, 124, Short.MAX_VALUE)
+            .addGap(0, 50, Short.MAX_VALUE)
         );
 
-        panelOpciones.add(panelRegistrarPrestamo, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 130, -1, 124));
+        panelOpciones.add(panelRegistrarPrestamo, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 90, -1, 50));
 
         labelRegistrarPrestamo.setBackground(new java.awt.Color(0, 81, 158));
         labelRegistrarPrestamo.setFont(new java.awt.Font("Segoe UI", 0, 18)); // NOI18N
@@ -124,7 +143,7 @@ public class GUIPrincipalBibliotecario extends javax.swing.JFrame {
                 labelRegistrarPrestamoMouseClicked(evt);
             }
         });
-        panelOpciones.add(labelRegistrarPrestamo, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 130, 220, 124));
+        panelOpciones.add(labelRegistrarPrestamo, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 90, 220, 50));
 
         panelRegistrarRecurso.setBackground(new java.awt.Color(0, 81, 158));
         panelRegistrarRecurso.setCursor(new java.awt.Cursor(java.awt.Cursor.HAND_CURSOR));
@@ -137,10 +156,10 @@ public class GUIPrincipalBibliotecario extends javax.swing.JFrame {
         );
         panelRegistrarRecursoLayout.setVerticalGroup(
             panelRegistrarRecursoLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGap(0, 124, Short.MAX_VALUE)
+            .addGap(0, 50, Short.MAX_VALUE)
         );
 
-        panelOpciones.add(panelRegistrarRecurso, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 260, -1, 124));
+        panelOpciones.add(panelRegistrarRecurso, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 140, -1, 50));
 
         labelRegistrarRecurso.setBackground(new java.awt.Color(0, 81, 158));
         labelRegistrarRecurso.setFont(new java.awt.Font("Segoe UI", 0, 18)); // NOI18N
@@ -153,7 +172,7 @@ public class GUIPrincipalBibliotecario extends javax.swing.JFrame {
                 labelRegistrarRecursoMouseClicked(evt);
             }
         });
-        panelOpciones.add(labelRegistrarRecurso, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 260, 220, 124));
+        panelOpciones.add(labelRegistrarRecurso, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 140, 220, 50));
 
         panelBuscarRecurso.setBackground(new java.awt.Color(0, 81, 158));
         panelBuscarRecurso.setCursor(new java.awt.Cursor(java.awt.Cursor.HAND_CURSOR));
@@ -166,10 +185,10 @@ public class GUIPrincipalBibliotecario extends javax.swing.JFrame {
         );
         panelBuscarRecursoLayout.setVerticalGroup(
             panelBuscarRecursoLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGap(0, 124, Short.MAX_VALUE)
+            .addGap(0, 50, Short.MAX_VALUE)
         );
 
-        panelOpciones.add(panelBuscarRecurso, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 390, -1, 124));
+        panelOpciones.add(panelBuscarRecurso, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 190, -1, 50));
 
         labelBuscarRecurso.setBackground(new java.awt.Color(0, 81, 158));
         labelBuscarRecurso.setFont(new java.awt.Font("Segoe UI", 0, 18)); // NOI18N
@@ -182,7 +201,7 @@ public class GUIPrincipalBibliotecario extends javax.swing.JFrame {
                 labelBuscarRecursoMouseClicked(evt);
             }
         });
-        panelOpciones.add(labelBuscarRecurso, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 390, 220, 124));
+        panelOpciones.add(labelBuscarRecurso, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 190, 220, 50));
 
         panelSolicitarFolio.setBackground(new java.awt.Color(0, 81, 158));
         panelSolicitarFolio.setCursor(new java.awt.Cursor(java.awt.Cursor.HAND_CURSOR));
@@ -195,10 +214,10 @@ public class GUIPrincipalBibliotecario extends javax.swing.JFrame {
         );
         panelSolicitarFolioLayout.setVerticalGroup(
             panelSolicitarFolioLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGap(0, 124, Short.MAX_VALUE)
+            .addGap(0, 50, Short.MAX_VALUE)
         );
 
-        panelOpciones.add(panelSolicitarFolio, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 520, -1, 124));
+        panelOpciones.add(panelSolicitarFolio, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 240, -1, 50));
 
         labelSolicitarFolio.setBackground(new java.awt.Color(0, 81, 158));
         labelSolicitarFolio.setFont(new java.awt.Font("Segoe UI", 0, 18)); // NOI18N
@@ -211,9 +230,16 @@ public class GUIPrincipalBibliotecario extends javax.swing.JFrame {
                 labelSolicitarFolioMouseClicked(evt);
             }
         });
-        panelOpciones.add(labelSolicitarFolio, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 520, 220, 124));
+        panelOpciones.add(labelSolicitarFolio, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 240, 220, 50));
 
-        panelBackground.add(panelOpciones, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 70, 220, -1));
+        jLabel11.setBackground(new java.awt.Color(0, 81, 158));
+        jLabel11.setFont(new java.awt.Font("Segoe UI", 1, 20)); // NOI18N
+        jLabel11.setForeground(new java.awt.Color(255, 255, 255));
+        jLabel11.setText("           Opciones");
+        jLabel11.setOpaque(true);
+        panelOpciones.add(jLabel11, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 0, 220, 40));
+
+        panelBackground.add(panelOpciones, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 70, 220, 640));
 
         panelInformacion.setBackground(new java.awt.Color(0, 81, 158));
         panelInformacion.setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
@@ -307,83 +333,108 @@ public class GUIPrincipalBibliotecario extends javax.swing.JFrame {
                 "Nombre", "Autor", "Estado", "Sección"
             }
         ));
+        jTable2.setCellSelectionEnabled(false);
         jScrollPane2.setViewportView(jTable2);
 
         jLabel9.setText("Datos del recurso documental:");
 
-        jButton1.setText("Prestar recurso");
-        jButton1.addActionListener(new java.awt.event.ActionListener() {
-            public void actionPerformed(java.awt.event.ActionEvent evt) {
-                jButton1ActionPerformed(evt);
-            }
-        });
-
         jLabel10.setFont(new java.awt.Font("Segoe UI", 0, 24)); // NOI18N
         jLabel10.setText("Formulario para registro de préstamos a domicilio");
 
-        jButton2.setText("Cancelar");
-        jButton2.addActionListener(new java.awt.event.ActionListener() {
-            public void actionPerformed(java.awt.event.ActionEvent evt) {
-                jButton2ActionPerformed(evt);
-            }
-        });
+        botonPrestarRecurso.setBackground(new java.awt.Color(0, 81, 158));
+        botonPrestarRecurso.setCursor(new java.awt.Cursor(java.awt.Cursor.HAND_CURSOR));
+
+        jLabel12.setFont(new java.awt.Font("Segoe UI", 1, 14)); // NOI18N
+        jLabel12.setForeground(new java.awt.Color(255, 255, 255));
+        jLabel12.setText("Prestar recurso");
+
+        javax.swing.GroupLayout botonPrestarRecursoLayout = new javax.swing.GroupLayout(botonPrestarRecurso);
+        botonPrestarRecurso.setLayout(botonPrestarRecursoLayout);
+        botonPrestarRecursoLayout.setHorizontalGroup(
+            botonPrestarRecursoLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGroup(botonPrestarRecursoLayout.createSequentialGroup()
+                .addContainerGap()
+                .addComponent(jLabel12)
+                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
+        );
+        botonPrestarRecursoLayout.setVerticalGroup(
+            botonPrestarRecursoLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addComponent(jLabel12, javax.swing.GroupLayout.Alignment.TRAILING, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+        );
+
+        botonCancelar.setBackground(new java.awt.Color(0, 81, 158));
+        botonCancelar.setCursor(new java.awt.Cursor(java.awt.Cursor.HAND_CURSOR));
+
+        jLabel13.setFont(new java.awt.Font("Segoe UI", 1, 14)); // NOI18N
+        jLabel13.setForeground(new java.awt.Color(255, 255, 255));
+        jLabel13.setText("    Cancelar");
+        jLabel13.setCursor(new java.awt.Cursor(java.awt.Cursor.HAND_CURSOR));
+
+        javax.swing.GroupLayout botonCancelarLayout = new javax.swing.GroupLayout(botonCancelar);
+        botonCancelar.setLayout(botonCancelarLayout);
+        botonCancelarLayout.setHorizontalGroup(
+            botonCancelarLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGroup(botonCancelarLayout.createSequentialGroup()
+                .addContainerGap()
+                .addComponent(jLabel13, javax.swing.GroupLayout.DEFAULT_SIZE, 90, Short.MAX_VALUE)
+                .addContainerGap())
+        );
+        botonCancelarLayout.setVerticalGroup(
+            botonCancelarLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addComponent(jLabel13, javax.swing.GroupLayout.DEFAULT_SIZE, 27, Short.MAX_VALUE)
+        );
 
         javax.swing.GroupLayout panelFormularioPrestamoLayout = new javax.swing.GroupLayout(panelFormularioPrestamo);
         panelFormularioPrestamo.setLayout(panelFormularioPrestamoLayout);
         panelFormularioPrestamoLayout.setHorizontalGroup(
             panelFormularioPrestamoLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(panelFormularioPrestamoLayout.createSequentialGroup()
+                .addContainerGap(27, Short.MAX_VALUE)
                 .addGroup(panelFormularioPrestamoLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                    .addGroup(panelFormularioPrestamoLayout.createSequentialGroup()
-                        .addGap(27, 27, 27)
-                        .addGroup(panelFormularioPrestamoLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                            .addComponent(jLabel9)
-                            .addGroup(panelFormularioPrestamoLayout.createSequentialGroup()
-                                .addGap(0, 0, Short.MAX_VALUE)
-                                .addGroup(panelFormularioPrestamoLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
-                                    .addGroup(panelFormularioPrestamoLayout.createSequentialGroup()
-                                        .addComponent(jButton1)
-                                        .addGap(52, 52, 52)
-                                        .addComponent(jButton2))
-                                    .addGroup(panelFormularioPrestamoLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
-                                        .addComponent(jLabel7)
-                                        .addComponent(jTextField2, javax.swing.GroupLayout.PREFERRED_SIZE, 250, javax.swing.GroupLayout.PREFERRED_SIZE)
-                                        .addComponent(jLabel3)
-                                        .addComponent(jScrollPane1, javax.swing.GroupLayout.DEFAULT_SIZE, 826, Short.MAX_VALUE)
-                                        .addComponent(jLabel8)
-                                        .addComponent(jTextField1, javax.swing.GroupLayout.PREFERRED_SIZE, 250, javax.swing.GroupLayout.PREFERRED_SIZE)
-                                        .addComponent(jScrollPane2))))))
-                    .addGroup(panelFormularioPrestamoLayout.createSequentialGroup()
-                        .addGap(170, 170, 170)
-                        .addComponent(jLabel10)))
+                    .addComponent(jLabel9)
+                    .addGroup(panelFormularioPrestamoLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING, false)
+                        .addGroup(panelFormularioPrestamoLayout.createSequentialGroup()
+                            .addComponent(botonPrestarRecurso, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                            .addGap(18, 18, 18)
+                            .addComponent(botonCancelar, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
+                        .addComponent(jScrollPane1, javax.swing.GroupLayout.Alignment.LEADING, javax.swing.GroupLayout.DEFAULT_SIZE, 826, Short.MAX_VALUE)
+                        .addComponent(jScrollPane2, javax.swing.GroupLayout.Alignment.LEADING)
+                        .addComponent(jLabel7, javax.swing.GroupLayout.Alignment.LEADING)
+                        .addComponent(jTextField2, javax.swing.GroupLayout.Alignment.LEADING, javax.swing.GroupLayout.PREFERRED_SIZE, 250, javax.swing.GroupLayout.PREFERRED_SIZE)
+                        .addComponent(jLabel8, javax.swing.GroupLayout.Alignment.LEADING)
+                        .addComponent(jTextField1, javax.swing.GroupLayout.Alignment.LEADING, javax.swing.GroupLayout.PREFERRED_SIZE, 250, javax.swing.GroupLayout.PREFERRED_SIZE)
+                        .addComponent(jLabel3, javax.swing.GroupLayout.Alignment.LEADING)
+                        .addGroup(javax.swing.GroupLayout.Alignment.LEADING, panelFormularioPrestamoLayout.createSequentialGroup()
+                            .addGap(143, 143, 143)
+                            .addComponent(jLabel10))))
                 .addContainerGap(27, Short.MAX_VALUE))
         );
         panelFormularioPrestamoLayout.setVerticalGroup(
             panelFormularioPrestamoLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(panelFormularioPrestamoLayout.createSequentialGroup()
-                .addContainerGap(11, Short.MAX_VALUE)
+                .addContainerGap(16, Short.MAX_VALUE)
                 .addComponent(jLabel10)
                 .addGap(52, 52, 52)
                 .addComponent(jLabel3)
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                 .addComponent(jTextField1, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                 .addComponent(jLabel7)
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                 .addComponent(jScrollPane1, javax.swing.GroupLayout.PREFERRED_SIZE, 144, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                 .addComponent(jLabel8)
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                 .addComponent(jTextField2, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                 .addComponent(jLabel9)
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                 .addComponent(jScrollPane2, javax.swing.GroupLayout.PREFERRED_SIZE, 144, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addGap(18, 18, 18)
-                .addGroup(panelFormularioPrestamoLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                    .addComponent(jButton1)
-                    .addComponent(jButton2))
-                .addGap(11, 11, 11))
+                .addGap(20, 20, 20)
+                .addGroup(panelFormularioPrestamoLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
+                    .addComponent(botonCancelar, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                    .addComponent(botonPrestarRecurso, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
+                .addGap(24, 24, 24))
         );
 
         panelContenedor.add(panelFormularioPrestamo, "card4");
@@ -467,7 +518,7 @@ public class GUIPrincipalBibliotecario extends javax.swing.JFrame {
         );
         layout.setVerticalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addComponent(panelBackground, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+            .addComponent(panelBackground, javax.swing.GroupLayout.PREFERRED_SIZE, 703, javax.swing.GroupLayout.PREFERRED_SIZE)
         );
 
         pack();
@@ -521,14 +572,6 @@ public class GUIPrincipalBibliotecario extends javax.swing.JFrame {
     private void jTextField1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jTextField1ActionPerformed
         // TODO add your handling code here:
     }//GEN-LAST:event_jTextField1ActionPerformed
-
-    private void jButton1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton1ActionPerformed
-        // TODO add your handling code here:
-    }//GEN-LAST:event_jButton1ActionPerformed
-
-    private void jButton2ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton2ActionPerformed
-        // TODO add your handling code here:
-    }//GEN-LAST:event_jButton2ActionPerformed
     
     private void activarMenuPrincipal(){
         panelMenuPrincipal.setVisible(true);
@@ -602,7 +645,7 @@ public class GUIPrincipalBibliotecario extends javax.swing.JFrame {
         panelSolicitarFolio.setVisible(false);
         labelSolicitarFolio.setBackground(new java.awt.Color(0,81,158));
     }
-    
+  
     
     
     public static void main(String args[]) {
@@ -632,10 +675,13 @@ public class GUIPrincipalBibliotecario extends javax.swing.JFrame {
     }
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
-    private javax.swing.JButton jButton1;
-    private javax.swing.JButton jButton2;
+    private javax.swing.JPanel botonCancelar;
+    private javax.swing.JPanel botonPrestarRecurso;
     private javax.swing.JLabel jLabel1;
     private javax.swing.JLabel jLabel10;
+    private javax.swing.JLabel jLabel11;
+    private javax.swing.JLabel jLabel12;
+    private javax.swing.JLabel jLabel13;
     private javax.swing.JLabel jLabel2;
     private javax.swing.JLabel jLabel3;
     private javax.swing.JLabel jLabel4;
@@ -644,6 +690,7 @@ public class GUIPrincipalBibliotecario extends javax.swing.JFrame {
     private javax.swing.JLabel jLabel7;
     private javax.swing.JLabel jLabel8;
     private javax.swing.JLabel jLabel9;
+    private javax.swing.JPanel jPanel1;
     private javax.swing.JScrollPane jScrollPane1;
     private javax.swing.JScrollPane jScrollPane2;
     private javax.swing.JTable jTable1;
