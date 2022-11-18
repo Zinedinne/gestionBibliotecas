@@ -5,7 +5,10 @@ package com.mycompany.bibliotecafei.modelo.pojo;
  * @author franz
  */
 public class UsuarioStaff {
+    
+    private int idUsuarioStaff;
     private String nombreUsuarioStaff;
+    private String tipoUsuario;
     private String nombreUsuario;
     private String password;
 
