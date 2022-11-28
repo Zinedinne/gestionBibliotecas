@@ -42,32 +42,18 @@ public class GUIPrincipalBibliotecario extends javax.swing.JFrame {
         panelMenuPrincipal = new javax.swing.JPanel();
         jLabel1 = new javax.swing.JLabel();
         panelGestionUsuarios = new javax.swing.JPanel();
-        panelRenovarUsuario = new javax.swing.JPanel();
-        jLabel6 = new javax.swing.JLabel();
         panelRegistrarUsuario = new javax.swing.JPanel();
         jLabel17 = new javax.swing.JLabel();
-        panelModificarUsuario = new javax.swing.JPanel();
-        jLabel18 = new javax.swing.JLabel();
-        panelConsultarUsuarios = new javax.swing.JPanel();
-        jLabel19 = new javax.swing.JLabel();
         panelGestionPrestamos = new javax.swing.JPanel();
-        panelPrestamoDomicilio = new javax.swing.JPanel();
+        panelRegistrarPrestamo = new javax.swing.JPanel();
         jLabel20 = new javax.swing.JLabel();
-        panelPrestamoSala = new javax.swing.JPanel();
-        jLabel21 = new javax.swing.JLabel();
-        panelInterbibliotecario = new javax.swing.JPanel();
-        jLabel22 = new javax.swing.JLabel();
         panelRegistrarDevolucion = new javax.swing.JPanel();
         jLabel23 = new javax.swing.JLabel();
         panelGestionRecursos = new javax.swing.JPanel();
         panelRegistrarRecurso = new javax.swing.JPanel();
         jLabel24 = new javax.swing.JLabel();
-        panelSolicitarFolio = new javax.swing.JPanel();
-        jLabel25 = new javax.swing.JLabel();
         panelBuscarRecurso = new javax.swing.JPanel();
         jLabel26 = new javax.swing.JLabel();
-        panelIdentificarRecurso = new javax.swing.JPanel();
-        jLabel27 = new javax.swing.JLabel();
 
         javax.swing.GroupLayout jPanel1Layout = new javax.swing.GroupLayout(jPanel1);
         jPanel1.setLayout(jPanel1Layout);
@@ -294,38 +280,6 @@ public class GUIPrincipalBibliotecario extends javax.swing.JFrame {
 
         panelGestionUsuarios.setBackground(new java.awt.Color(255, 255, 255));
 
-        panelRenovarUsuario.setBackground(new java.awt.Color(0, 81, 158));
-        panelRenovarUsuario.setCursor(new java.awt.Cursor(java.awt.Cursor.HAND_CURSOR));
-        panelRenovarUsuario.addMouseListener(new java.awt.event.MouseAdapter() {
-            public void mouseEntered(java.awt.event.MouseEvent evt) {
-                panelRenovarUsuarioMouseEntered(evt);
-            }
-            public void mouseExited(java.awt.event.MouseEvent evt) {
-                panelRenovarUsuarioMouseExited(evt);
-            }
-        });
-
-        jLabel6.setFont(new java.awt.Font("Segoe UI", 0, 24)); // NOI18N
-        jLabel6.setForeground(new java.awt.Color(255, 255, 255));
-        jLabel6.setText("Renovar usuario");
-
-        javax.swing.GroupLayout panelRenovarUsuarioLayout = new javax.swing.GroupLayout(panelRenovarUsuario);
-        panelRenovarUsuario.setLayout(panelRenovarUsuarioLayout);
-        panelRenovarUsuarioLayout.setHorizontalGroup(
-            panelRenovarUsuarioLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, panelRenovarUsuarioLayout.createSequentialGroup()
-                .addContainerGap(110, Short.MAX_VALUE)
-                .addComponent(jLabel6)
-                .addGap(49, 49, 49))
-        );
-        panelRenovarUsuarioLayout.setVerticalGroup(
-            panelRenovarUsuarioLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGroup(panelRenovarUsuarioLayout.createSequentialGroup()
-                .addGap(28, 28, 28)
-                .addComponent(jLabel6, javax.swing.GroupLayout.PREFERRED_SIZE, 45, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addContainerGap(27, Short.MAX_VALUE))
-        );
-
         panelRegistrarUsuario.setBackground(new java.awt.Color(0, 81, 158));
         panelRegistrarUsuario.setCursor(new java.awt.Cursor(java.awt.Cursor.HAND_CURSOR));
         panelRegistrarUsuario.addMouseListener(new java.awt.event.MouseAdapter() {
@@ -348,81 +302,17 @@ public class GUIPrincipalBibliotecario extends javax.swing.JFrame {
         panelRegistrarUsuario.setLayout(panelRegistrarUsuarioLayout);
         panelRegistrarUsuarioLayout.setHorizontalGroup(
             panelRegistrarUsuarioLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, panelRegistrarUsuarioLayout.createSequentialGroup()
-                .addContainerGap(102, Short.MAX_VALUE)
+            .addGroup(panelRegistrarUsuarioLayout.createSequentialGroup()
+                .addGap(277, 277, 277)
                 .addComponent(jLabel17)
-                .addGap(49, 49, 49))
+                .addContainerGap(303, Short.MAX_VALUE))
         );
         panelRegistrarUsuarioLayout.setVerticalGroup(
             panelRegistrarUsuarioLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGroup(panelRegistrarUsuarioLayout.createSequentialGroup()
-                .addGap(28, 28, 28)
+            .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, panelRegistrarUsuarioLayout.createSequentialGroup()
+                .addContainerGap(30, Short.MAX_VALUE)
                 .addComponent(jLabel17, javax.swing.GroupLayout.PREFERRED_SIZE, 45, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addContainerGap(27, Short.MAX_VALUE))
-        );
-
-        panelModificarUsuario.setBackground(new java.awt.Color(0, 81, 158));
-        panelModificarUsuario.setCursor(new java.awt.Cursor(java.awt.Cursor.HAND_CURSOR));
-        panelModificarUsuario.addMouseListener(new java.awt.event.MouseAdapter() {
-            public void mouseEntered(java.awt.event.MouseEvent evt) {
-                panelModificarUsuarioMouseEntered(evt);
-            }
-            public void mouseExited(java.awt.event.MouseEvent evt) {
-                panelModificarUsuarioMouseExited(evt);
-            }
-        });
-
-        jLabel18.setFont(new java.awt.Font("Segoe UI", 0, 24)); // NOI18N
-        jLabel18.setForeground(new java.awt.Color(255, 255, 255));
-        jLabel18.setText("Modificar Usuario");
-
-        javax.swing.GroupLayout panelModificarUsuarioLayout = new javax.swing.GroupLayout(panelModificarUsuario);
-        panelModificarUsuario.setLayout(panelModificarUsuarioLayout);
-        panelModificarUsuarioLayout.setHorizontalGroup(
-            panelModificarUsuarioLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, panelModificarUsuarioLayout.createSequentialGroup()
-                .addContainerGap(94, Short.MAX_VALUE)
-                .addComponent(jLabel18)
-                .addGap(49, 49, 49))
-        );
-        panelModificarUsuarioLayout.setVerticalGroup(
-            panelModificarUsuarioLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGroup(panelModificarUsuarioLayout.createSequentialGroup()
-                .addGap(28, 28, 28)
-                .addComponent(jLabel18, javax.swing.GroupLayout.PREFERRED_SIZE, 45, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addContainerGap(27, Short.MAX_VALUE))
-        );
-
-        panelConsultarUsuarios.setBackground(new java.awt.Color(0, 81, 158));
-        panelConsultarUsuarios.setCursor(new java.awt.Cursor(java.awt.Cursor.HAND_CURSOR));
-        panelConsultarUsuarios.addMouseListener(new java.awt.event.MouseAdapter() {
-            public void mouseEntered(java.awt.event.MouseEvent evt) {
-                panelConsultarUsuariosMouseEntered(evt);
-            }
-            public void mouseExited(java.awt.event.MouseEvent evt) {
-                panelConsultarUsuariosMouseExited(evt);
-            }
-        });
-
-        jLabel19.setFont(new java.awt.Font("Segoe UI", 0, 24)); // NOI18N
-        jLabel19.setForeground(new java.awt.Color(255, 255, 255));
-        jLabel19.setText("Consultar Usuarios");
-
-        javax.swing.GroupLayout panelConsultarUsuariosLayout = new javax.swing.GroupLayout(panelConsultarUsuarios);
-        panelConsultarUsuarios.setLayout(panelConsultarUsuariosLayout);
-        panelConsultarUsuariosLayout.setHorizontalGroup(
-            panelConsultarUsuariosLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, panelConsultarUsuariosLayout.createSequentialGroup()
-                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                .addComponent(jLabel19)
-                .addGap(39, 39, 39))
-        );
-        panelConsultarUsuariosLayout.setVerticalGroup(
-            panelConsultarUsuariosLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGroup(panelConsultarUsuariosLayout.createSequentialGroup()
-                .addGap(28, 28, 28)
-                .addComponent(jLabel19, javax.swing.GroupLayout.PREFERRED_SIZE, 45, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addContainerGap(27, Short.MAX_VALUE))
+                .addGap(25, 25, 25))
         );
 
         javax.swing.GroupLayout panelGestionUsuariosLayout = new javax.swing.GroupLayout(panelGestionUsuarios);
@@ -430,131 +320,55 @@ public class GUIPrincipalBibliotecario extends javax.swing.JFrame {
         panelGestionUsuariosLayout.setHorizontalGroup(
             panelGestionUsuariosLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(panelGestionUsuariosLayout.createSequentialGroup()
-                .addGap(72, 72, 72)
-                .addGroup(panelGestionUsuariosLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                    .addComponent(panelRenovarUsuario, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                    .addComponent(panelRegistrarUsuario, javax.swing.GroupLayout.Alignment.TRAILING, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
-                .addGap(72, 72, 72)
-                .addGroup(panelGestionUsuariosLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
-                    .addComponent(panelModificarUsuario, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                    .addComponent(panelConsultarUsuarios, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
-                .addContainerGap(74, Short.MAX_VALUE))
+                .addGap(60, 60, 60)
+                .addComponent(panelRegistrarUsuario, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addContainerGap(60, Short.MAX_VALUE))
         );
         panelGestionUsuariosLayout.setVerticalGroup(
             panelGestionUsuariosLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, panelGestionUsuariosLayout.createSequentialGroup()
-                .addContainerGap(360, Short.MAX_VALUE)
-                .addGroup(panelGestionUsuariosLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                    .addComponent(panelRegistrarUsuario, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                    .addComponent(panelModificarUsuario, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
-                .addGap(33, 33, 33)
-                .addGroup(panelGestionUsuariosLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                    .addComponent(panelRenovarUsuario, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                    .addComponent(panelConsultarUsuarios, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
-                .addGap(64, 64, 64))
+                .addContainerGap(475, Short.MAX_VALUE)
+                .addComponent(panelRegistrarUsuario, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addGap(82, 82, 82))
         );
 
         panelContenedor.add(panelGestionUsuarios, "card3");
 
         panelGestionPrestamos.setBackground(new java.awt.Color(255, 255, 255));
 
-        panelPrestamoDomicilio.setBackground(new java.awt.Color(0, 81, 158));
-        panelPrestamoDomicilio.setCursor(new java.awt.Cursor(java.awt.Cursor.HAND_CURSOR));
-        panelPrestamoDomicilio.addMouseListener(new java.awt.event.MouseAdapter() {
+        panelRegistrarPrestamo.setBackground(new java.awt.Color(0, 81, 158));
+        panelRegistrarPrestamo.setCursor(new java.awt.Cursor(java.awt.Cursor.HAND_CURSOR));
+        panelRegistrarPrestamo.addMouseListener(new java.awt.event.MouseAdapter() {
             public void mouseClicked(java.awt.event.MouseEvent evt) {
-                panelPrestamoDomicilioMouseClicked(evt);
+                panelRegistrarPrestamoMouseClicked(evt);
             }
             public void mouseEntered(java.awt.event.MouseEvent evt) {
-                panelPrestamoDomicilioMouseEntered(evt);
+                panelRegistrarPrestamoMouseEntered(evt);
             }
             public void mouseExited(java.awt.event.MouseEvent evt) {
-                panelPrestamoDomicilioMouseExited(evt);
+                panelRegistrarPrestamoMouseExited(evt);
             }
         });
 
         jLabel20.setFont(new java.awt.Font("Segoe UI", 0, 24)); // NOI18N
         jLabel20.setForeground(new java.awt.Color(255, 255, 255));
-        jLabel20.setText("Préstamo a domicilio");
+        jLabel20.setText("Registrar préstamo");
 
-        javax.swing.GroupLayout panelPrestamoDomicilioLayout = new javax.swing.GroupLayout(panelPrestamoDomicilio);
-        panelPrestamoDomicilio.setLayout(panelPrestamoDomicilioLayout);
-        panelPrestamoDomicilioLayout.setHorizontalGroup(
-            panelPrestamoDomicilioLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, panelPrestamoDomicilioLayout.createSequentialGroup()
-                .addContainerGap(92, Short.MAX_VALUE)
+        javax.swing.GroupLayout panelRegistrarPrestamoLayout = new javax.swing.GroupLayout(panelRegistrarPrestamo);
+        panelRegistrarPrestamo.setLayout(panelRegistrarPrestamoLayout);
+        panelRegistrarPrestamoLayout.setHorizontalGroup(
+            panelRegistrarPrestamoLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGroup(panelRegistrarPrestamoLayout.createSequentialGroup()
+                .addGap(257, 257, 257)
                 .addComponent(jLabel20)
-                .addGap(16, 16, 16))
+                .addContainerGap(280, Short.MAX_VALUE))
         );
-        panelPrestamoDomicilioLayout.setVerticalGroup(
-            panelPrestamoDomicilioLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGroup(panelPrestamoDomicilioLayout.createSequentialGroup()
+        panelRegistrarPrestamoLayout.setVerticalGroup(
+            panelRegistrarPrestamoLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGroup(panelRegistrarPrestamoLayout.createSequentialGroup()
                 .addGap(28, 28, 28)
                 .addComponent(jLabel20, javax.swing.GroupLayout.PREFERRED_SIZE, 45, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addContainerGap(27, Short.MAX_VALUE))
-        );
-
-        panelPrestamoSala.setBackground(new java.awt.Color(0, 81, 158));
-        panelPrestamoSala.setCursor(new java.awt.Cursor(java.awt.Cursor.HAND_CURSOR));
-        panelPrestamoSala.addMouseListener(new java.awt.event.MouseAdapter() {
-            public void mouseEntered(java.awt.event.MouseEvent evt) {
-                panelPrestamoSalaMouseEntered(evt);
-            }
-            public void mouseExited(java.awt.event.MouseEvent evt) {
-                panelPrestamoSalaMouseExited(evt);
-            }
-        });
-
-        jLabel21.setFont(new java.awt.Font("Segoe UI", 0, 24)); // NOI18N
-        jLabel21.setForeground(new java.awt.Color(255, 255, 255));
-        jLabel21.setText("Préstamo en sala");
-
-        javax.swing.GroupLayout panelPrestamoSalaLayout = new javax.swing.GroupLayout(panelPrestamoSala);
-        panelPrestamoSala.setLayout(panelPrestamoSalaLayout);
-        panelPrestamoSalaLayout.setHorizontalGroup(
-            panelPrestamoSalaLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, panelPrestamoSalaLayout.createSequentialGroup()
-                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                .addComponent(jLabel21)
-                .addGap(57, 57, 57))
-        );
-        panelPrestamoSalaLayout.setVerticalGroup(
-            panelPrestamoSalaLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGroup(panelPrestamoSalaLayout.createSequentialGroup()
-                .addGap(28, 28, 28)
-                .addComponent(jLabel21, javax.swing.GroupLayout.PREFERRED_SIZE, 45, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addContainerGap(27, Short.MAX_VALUE))
-        );
-
-        panelInterbibliotecario.setBackground(new java.awt.Color(0, 81, 158));
-        panelInterbibliotecario.setCursor(new java.awt.Cursor(java.awt.Cursor.HAND_CURSOR));
-        panelInterbibliotecario.addMouseListener(new java.awt.event.MouseAdapter() {
-            public void mouseEntered(java.awt.event.MouseEvent evt) {
-                panelInterbibliotecarioMouseEntered(evt);
-            }
-            public void mouseExited(java.awt.event.MouseEvent evt) {
-                panelInterbibliotecarioMouseExited(evt);
-            }
-        });
-
-        jLabel22.setFont(new java.awt.Font("Segoe UI", 0, 24)); // NOI18N
-        jLabel22.setForeground(new java.awt.Color(255, 255, 255));
-        jLabel22.setText("Interbibliotecario");
-
-        javax.swing.GroupLayout panelInterbibliotecarioLayout = new javax.swing.GroupLayout(panelInterbibliotecario);
-        panelInterbibliotecario.setLayout(panelInterbibliotecarioLayout);
-        panelInterbibliotecarioLayout.setHorizontalGroup(
-            panelInterbibliotecarioLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, panelInterbibliotecarioLayout.createSequentialGroup()
-                .addContainerGap(100, Short.MAX_VALUE)
-                .addComponent(jLabel22)
-                .addGap(50, 50, 50))
-        );
-        panelInterbibliotecarioLayout.setVerticalGroup(
-            panelInterbibliotecarioLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGroup(panelInterbibliotecarioLayout.createSequentialGroup()
-                .addGap(27, 27, 27)
-                .addComponent(jLabel22, javax.swing.GroupLayout.PREFERRED_SIZE, 45, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addContainerGap(28, Short.MAX_VALUE))
         );
 
         panelRegistrarDevolucion.setBackground(new java.awt.Color(0, 81, 158));
@@ -579,10 +393,10 @@ public class GUIPrincipalBibliotecario extends javax.swing.JFrame {
         panelRegistrarDevolucion.setLayout(panelRegistrarDevolucionLayout);
         panelRegistrarDevolucionLayout.setHorizontalGroup(
             panelRegistrarDevolucionLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, panelRegistrarDevolucionLayout.createSequentialGroup()
-                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+            .addGroup(panelRegistrarDevolucionLayout.createSequentialGroup()
+                .addGap(254, 254, 254)
                 .addComponent(jLabel23)
-                .addGap(15, 15, 15))
+                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
         );
         panelRegistrarDevolucionLayout.setVerticalGroup(
             panelRegistrarDevolucionLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
@@ -597,28 +411,20 @@ public class GUIPrincipalBibliotecario extends javax.swing.JFrame {
         panelGestionPrestamosLayout.setHorizontalGroup(
             panelGestionPrestamosLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(panelGestionPrestamosLayout.createSequentialGroup()
-                .addContainerGap(80, Short.MAX_VALUE)
-                .addGroup(panelGestionPrestamosLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
-                    .addComponent(panelPrestamoSala, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                    .addComponent(panelPrestamoDomicilio, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
-                .addGap(59, 59, 59)
+                .addGap(72, 72, 72)
                 .addGroup(panelGestionPrestamosLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
                     .addComponent(panelRegistrarDevolucion, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                    .addComponent(panelInterbibliotecario, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
-                .addGap(79, 79, 79))
+                    .addComponent(panelRegistrarPrestamo, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
+                .addContainerGap(71, Short.MAX_VALUE))
         );
         panelGestionPrestamosLayout.setVerticalGroup(
             panelGestionPrestamosLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGroup(panelGestionPrestamosLayout.createSequentialGroup()
-                .addContainerGap(354, Short.MAX_VALUE)
-                .addGroup(panelGestionPrestamosLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                    .addComponent(panelPrestamoDomicilio, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                    .addComponent(panelInterbibliotecario, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
-                .addGap(33, 33, 33)
-                .addGroup(panelGestionPrestamosLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                    .addComponent(panelPrestamoSala, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                    .addComponent(panelRegistrarDevolucion, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
-                .addGap(70, 70, 70))
+            .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, panelGestionPrestamosLayout.createSequentialGroup()
+                .addContainerGap(368, Short.MAX_VALUE)
+                .addComponent(panelRegistrarPrestamo, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addGap(18, 18, 18)
+                .addComponent(panelRegistrarDevolucion, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addGap(71, 71, 71))
         );
 
         panelContenedor.add(panelGestionPrestamos, "card4");
@@ -641,58 +447,23 @@ public class GUIPrincipalBibliotecario extends javax.swing.JFrame {
 
         jLabel24.setFont(new java.awt.Font("Segoe UI", 0, 24)); // NOI18N
         jLabel24.setForeground(new java.awt.Color(255, 255, 255));
-        jLabel24.setText("Registrar recurso");
+        jLabel24.setText("Registrar recurso documental");
 
         javax.swing.GroupLayout panelRegistrarRecursoLayout = new javax.swing.GroupLayout(panelRegistrarRecurso);
         panelRegistrarRecurso.setLayout(panelRegistrarRecursoLayout);
         panelRegistrarRecursoLayout.setHorizontalGroup(
             panelRegistrarRecursoLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, panelRegistrarRecursoLayout.createSequentialGroup()
-                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+            .addGroup(panelRegistrarRecursoLayout.createSequentialGroup()
+                .addGap(203, 203, 203)
                 .addComponent(jLabel24)
-                .addGap(39, 39, 39))
+                .addContainerGap(223, Short.MAX_VALUE))
         );
         panelRegistrarRecursoLayout.setVerticalGroup(
             panelRegistrarRecursoLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGroup(panelRegistrarRecursoLayout.createSequentialGroup()
-                .addGap(28, 28, 28)
+            .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, panelRegistrarRecursoLayout.createSequentialGroup()
+                .addContainerGap(33, Short.MAX_VALUE)
                 .addComponent(jLabel24, javax.swing.GroupLayout.PREFERRED_SIZE, 45, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addContainerGap(27, Short.MAX_VALUE))
-        );
-
-        panelSolicitarFolio.setBackground(new java.awt.Color(0, 81, 158));
-        panelSolicitarFolio.setCursor(new java.awt.Cursor(java.awt.Cursor.HAND_CURSOR));
-        panelSolicitarFolio.addMouseListener(new java.awt.event.MouseAdapter() {
-            public void mouseClicked(java.awt.event.MouseEvent evt) {
-                panelSolicitarFolioMouseClicked(evt);
-            }
-            public void mouseEntered(java.awt.event.MouseEvent evt) {
-                panelSolicitarFolioMouseEntered(evt);
-            }
-            public void mouseExited(java.awt.event.MouseEvent evt) {
-                panelSolicitarFolioMouseExited(evt);
-            }
-        });
-
-        jLabel25.setFont(new java.awt.Font("Segoe UI", 0, 24)); // NOI18N
-        jLabel25.setForeground(new java.awt.Color(255, 255, 255));
-        jLabel25.setText("Solicitar folio");
-
-        javax.swing.GroupLayout panelSolicitarFolioLayout = new javax.swing.GroupLayout(panelSolicitarFolio);
-        panelSolicitarFolio.setLayout(panelSolicitarFolioLayout);
-        panelSolicitarFolioLayout.setHorizontalGroup(
-            panelSolicitarFolioLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, panelSolicitarFolioLayout.createSequentialGroup()
-                .addContainerGap(114, Short.MAX_VALUE)
-                .addComponent(jLabel25)
-                .addGap(78, 78, 78))
-        );
-        panelSolicitarFolioLayout.setVerticalGroup(
-            panelSolicitarFolioLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGroup(panelSolicitarFolioLayout.createSequentialGroup()
-                .addGap(28, 28, 28)
-                .addComponent(jLabel25, javax.swing.GroupLayout.PREFERRED_SIZE, 45, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addContainerGap(27, Short.MAX_VALUE))
+                .addGap(22, 22, 22))
         );
 
         panelBuscarRecurso.setBackground(new java.awt.Color(0, 81, 158));
@@ -711,84 +482,44 @@ public class GUIPrincipalBibliotecario extends javax.swing.JFrame {
 
         jLabel26.setFont(new java.awt.Font("Segoe UI", 0, 24)); // NOI18N
         jLabel26.setForeground(new java.awt.Color(255, 255, 255));
-        jLabel26.setText("Buscar recurso");
+        jLabel26.setText("Buscar recurso documental");
 
         javax.swing.GroupLayout panelBuscarRecursoLayout = new javax.swing.GroupLayout(panelBuscarRecurso);
         panelBuscarRecurso.setLayout(panelBuscarRecursoLayout);
         panelBuscarRecursoLayout.setHorizontalGroup(
             panelBuscarRecursoLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, panelBuscarRecursoLayout.createSequentialGroup()
-                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+            .addGroup(panelBuscarRecursoLayout.createSequentialGroup()
+                .addGap(217, 217, 217)
                 .addComponent(jLabel26)
-                .addGap(61, 61, 61))
+                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
         );
         panelBuscarRecursoLayout.setVerticalGroup(
             panelBuscarRecursoLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGroup(panelBuscarRecursoLayout.createSequentialGroup()
-                .addGap(28, 28, 28)
+            .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, panelBuscarRecursoLayout.createSequentialGroup()
+                .addContainerGap(29, Short.MAX_VALUE)
                 .addComponent(jLabel26, javax.swing.GroupLayout.PREFERRED_SIZE, 45, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addContainerGap(27, Short.MAX_VALUE))
-        );
-
-        panelIdentificarRecurso.setBackground(new java.awt.Color(0, 81, 158));
-        panelIdentificarRecurso.setCursor(new java.awt.Cursor(java.awt.Cursor.HAND_CURSOR));
-        panelIdentificarRecurso.addMouseListener(new java.awt.event.MouseAdapter() {
-            public void mouseEntered(java.awt.event.MouseEvent evt) {
-                panelIdentificarRecursoMouseEntered(evt);
-            }
-            public void mouseExited(java.awt.event.MouseEvent evt) {
-                panelIdentificarRecursoMouseExited(evt);
-            }
-        });
-
-        jLabel27.setFont(new java.awt.Font("Segoe UI", 0, 24)); // NOI18N
-        jLabel27.setForeground(new java.awt.Color(255, 255, 255));
-        jLabel27.setText("Identificar recurso");
-
-        javax.swing.GroupLayout panelIdentificarRecursoLayout = new javax.swing.GroupLayout(panelIdentificarRecurso);
-        panelIdentificarRecurso.setLayout(panelIdentificarRecursoLayout);
-        panelIdentificarRecursoLayout.setHorizontalGroup(
-            panelIdentificarRecursoLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, panelIdentificarRecursoLayout.createSequentialGroup()
-                .addContainerGap(115, Short.MAX_VALUE)
-                .addComponent(jLabel27)
-                .addGap(25, 25, 25))
-        );
-        panelIdentificarRecursoLayout.setVerticalGroup(
-            panelIdentificarRecursoLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGroup(panelIdentificarRecursoLayout.createSequentialGroup()
-                .addGap(26, 26, 26)
-                .addComponent(jLabel27, javax.swing.GroupLayout.PREFERRED_SIZE, 45, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addContainerGap(29, Short.MAX_VALUE))
+                .addGap(26, 26, 26))
         );
 
         javax.swing.GroupLayout panelGestionRecursosLayout = new javax.swing.GroupLayout(panelGestionRecursos);
         panelGestionRecursos.setLayout(panelGestionRecursosLayout);
         panelGestionRecursosLayout.setHorizontalGroup(
             panelGestionRecursosLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, panelGestionRecursosLayout.createSequentialGroup()
+            .addGroup(panelGestionRecursosLayout.createSequentialGroup()
                 .addGap(70, 70, 70)
                 .addGroup(panelGestionRecursosLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
-                    .addComponent(panelRegistrarRecurso, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                    .addComponent(panelSolicitarFolio, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 78, Short.MAX_VALUE)
-                .addGroup(panelGestionRecursosLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
                     .addComponent(panelBuscarRecurso, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                    .addComponent(panelIdentificarRecurso, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
-                .addGap(70, 70, 70))
+                    .addComponent(panelRegistrarRecurso, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
+                .addContainerGap(72, Short.MAX_VALUE))
         );
         panelGestionRecursosLayout.setVerticalGroup(
             panelGestionRecursosLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(panelGestionRecursosLayout.createSequentialGroup()
-                .addContainerGap(353, Short.MAX_VALUE)
-                .addGroup(panelGestionRecursosLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                    .addComponent(panelRegistrarRecurso, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                    .addComponent(panelBuscarRecurso, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
-                .addGap(33, 33, 33)
-                .addGroup(panelGestionRecursosLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                    .addComponent(panelSolicitarFolio, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                    .addComponent(panelIdentificarRecurso, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
-                .addGap(71, 71, 71))
+                .addContainerGap(376, Short.MAX_VALUE)
+                .addComponent(panelRegistrarRecurso, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addGap(18, 18, 18)
+                .addComponent(panelBuscarRecurso, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addGap(63, 63, 63))
         );
 
         panelContenedor.add(panelGestionRecursos, "card5");
@@ -873,61 +604,21 @@ public class GUIPrincipalBibliotecario extends javax.swing.JFrame {
         panelRegistrarUsuario.setBackground(new java.awt.Color(87, 145, 195));
     }//GEN-LAST:event_panelRegistrarUsuarioMouseEntered
 
-    private void panelModificarUsuarioMouseEntered(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_panelModificarUsuarioMouseEntered
-        panelModificarUsuario.setBackground(new java.awt.Color(87, 145, 195));
-    }//GEN-LAST:event_panelModificarUsuarioMouseEntered
-
-    private void panelRenovarUsuarioMouseEntered(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_panelRenovarUsuarioMouseEntered
-        panelRenovarUsuario.setBackground(new java.awt.Color(87, 145, 195));
-    }//GEN-LAST:event_panelRenovarUsuarioMouseEntered
-
-    private void panelConsultarUsuariosMouseEntered(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_panelConsultarUsuariosMouseEntered
-        panelConsultarUsuarios.setBackground(new java.awt.Color(87, 145, 195));
-    }//GEN-LAST:event_panelConsultarUsuariosMouseEntered
-
     private void panelRegistrarUsuarioMouseExited(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_panelRegistrarUsuarioMouseExited
         panelRegistrarUsuario.setBackground(new java.awt.Color(0,81,158));
     }//GEN-LAST:event_panelRegistrarUsuarioMouseExited
 
-    private void panelModificarUsuarioMouseExited(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_panelModificarUsuarioMouseExited
-        panelModificarUsuario.setBackground(new java.awt.Color(0,81,158));
-    }//GEN-LAST:event_panelModificarUsuarioMouseExited
-
-    private void panelRenovarUsuarioMouseExited(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_panelRenovarUsuarioMouseExited
-        panelRenovarUsuario.setBackground(new java.awt.Color(0,81,158));
-    }//GEN-LAST:event_panelRenovarUsuarioMouseExited
-
-    private void panelConsultarUsuariosMouseExited(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_panelConsultarUsuariosMouseExited
-        panelConsultarUsuarios.setBackground(new java.awt.Color(0,81,158));
-    }//GEN-LAST:event_panelConsultarUsuariosMouseExited
-
-    private void panelPrestamoDomicilioMouseEntered(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_panelPrestamoDomicilioMouseEntered
-        panelPrestamoDomicilio.setBackground(new java.awt.Color(87, 145, 195));
-    }//GEN-LAST:event_panelPrestamoDomicilioMouseEntered
-
-    private void panelInterbibliotecarioMouseEntered(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_panelInterbibliotecarioMouseEntered
-        panelInterbibliotecario.setBackground(new java.awt.Color(87, 145, 195));
-    }//GEN-LAST:event_panelInterbibliotecarioMouseEntered
-
-    private void panelPrestamoSalaMouseEntered(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_panelPrestamoSalaMouseEntered
-        panelPrestamoSala.setBackground(new java.awt.Color(87, 145, 195));
-    }//GEN-LAST:event_panelPrestamoSalaMouseEntered
+    private void panelRegistrarPrestamoMouseEntered(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_panelRegistrarPrestamoMouseEntered
+        panelRegistrarPrestamo.setBackground(new java.awt.Color(87, 145, 195));
+    }//GEN-LAST:event_panelRegistrarPrestamoMouseEntered
 
     private void panelRegistrarDevolucionMouseEntered(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_panelRegistrarDevolucionMouseEntered
         panelRegistrarDevolucion.setBackground(new java.awt.Color(87, 145, 195));
     }//GEN-LAST:event_panelRegistrarDevolucionMouseEntered
 
-    private void panelPrestamoDomicilioMouseExited(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_panelPrestamoDomicilioMouseExited
-        panelPrestamoDomicilio.setBackground(new java.awt.Color(0,81,158));
-    }//GEN-LAST:event_panelPrestamoDomicilioMouseExited
-
-    private void panelInterbibliotecarioMouseExited(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_panelInterbibliotecarioMouseExited
-        panelInterbibliotecario.setBackground(new java.awt.Color(0,81,158));
-    }//GEN-LAST:event_panelInterbibliotecarioMouseExited
-
-    private void panelPrestamoSalaMouseExited(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_panelPrestamoSalaMouseExited
-        panelPrestamoSala.setBackground(new java.awt.Color(0,81,158));
-    }//GEN-LAST:event_panelPrestamoSalaMouseExited
+    private void panelRegistrarPrestamoMouseExited(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_panelRegistrarPrestamoMouseExited
+        panelRegistrarPrestamo.setBackground(new java.awt.Color(0,81,158));
+    }//GEN-LAST:event_panelRegistrarPrestamoMouseExited
 
     private void panelRegistrarDevolucionMouseExited(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_panelRegistrarDevolucionMouseExited
         panelRegistrarDevolucion.setBackground(new java.awt.Color(0,81,158));
@@ -941,14 +632,6 @@ public class GUIPrincipalBibliotecario extends javax.swing.JFrame {
         panelBuscarRecurso.setBackground(new java.awt.Color(87, 145, 195));
     }//GEN-LAST:event_panelBuscarRecursoMouseEntered
 
-    private void panelSolicitarFolioMouseEntered(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_panelSolicitarFolioMouseEntered
-        panelSolicitarFolio.setBackground(new java.awt.Color(87, 145, 195));
-    }//GEN-LAST:event_panelSolicitarFolioMouseEntered
-
-    private void panelIdentificarRecursoMouseEntered(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_panelIdentificarRecursoMouseEntered
-        panelIdentificarRecurso.setBackground(new java.awt.Color(87, 145, 195));
-    }//GEN-LAST:event_panelIdentificarRecursoMouseEntered
-
     private void panelRegistrarRecursoMouseExited(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_panelRegistrarRecursoMouseExited
         panelRegistrarRecurso.setBackground(new java.awt.Color(0,81,158));
     }//GEN-LAST:event_panelRegistrarRecursoMouseExited
@@ -957,21 +640,13 @@ public class GUIPrincipalBibliotecario extends javax.swing.JFrame {
         panelBuscarRecurso.setBackground(new java.awt.Color(0,81,158));
     }//GEN-LAST:event_panelBuscarRecursoMouseExited
 
-    private void panelSolicitarFolioMouseExited(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_panelSolicitarFolioMouseExited
-        panelSolicitarFolio.setBackground(new java.awt.Color(0,81,158));
-    }//GEN-LAST:event_panelSolicitarFolioMouseExited
-
-    private void panelIdentificarRecursoMouseExited(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_panelIdentificarRecursoMouseExited
-        panelIdentificarRecurso.setBackground(new java.awt.Color(0,81,158));
-    }//GEN-LAST:event_panelIdentificarRecursoMouseExited
-
     private void panelRegistrarUsuarioMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_panelRegistrarUsuarioMouseClicked
         mostrarGUIRegistrarUsuario();
     }//GEN-LAST:event_panelRegistrarUsuarioMouseClicked
 
-    private void panelPrestamoDomicilioMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_panelPrestamoDomicilioMouseClicked
+    private void panelRegistrarPrestamoMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_panelRegistrarPrestamoMouseClicked
         mostrarGUIPrestamoDomicilio();
-    }//GEN-LAST:event_panelPrestamoDomicilioMouseClicked
+    }//GEN-LAST:event_panelRegistrarPrestamoMouseClicked
 
     private void panelRegistrarDevolucionMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_panelRegistrarDevolucionMouseClicked
         mostrarGUIRegistrarDevolucion();
@@ -984,10 +659,6 @@ public class GUIPrincipalBibliotecario extends javax.swing.JFrame {
     private void panelBuscarRecursoMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_panelBuscarRecursoMouseClicked
         mostrarGUIBuscarRecurso();
     }//GEN-LAST:event_panelBuscarRecursoMouseClicked
-
-    private void panelSolicitarFolioMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_panelSolicitarFolioMouseClicked
-        mostrarGUISolicitarFolio();
-    }//GEN-LAST:event_panelSolicitarFolioMouseClicked
     
     private void activarMenuPrincipal(){
         panelMenuPrincipal.setVisible(true);
@@ -1102,17 +773,10 @@ public class GUIPrincipalBibliotecario extends javax.swing.JFrame {
     private javax.swing.JLabel jLabel1;
     private javax.swing.JLabel jLabel11;
     private javax.swing.JLabel jLabel17;
-    private javax.swing.JLabel jLabel18;
-    private javax.swing.JLabel jLabel19;
     private javax.swing.JLabel jLabel20;
-    private javax.swing.JLabel jLabel21;
-    private javax.swing.JLabel jLabel22;
     private javax.swing.JLabel jLabel23;
     private javax.swing.JLabel jLabel24;
-    private javax.swing.JLabel jLabel25;
     private javax.swing.JLabel jLabel26;
-    private javax.swing.JLabel jLabel27;
-    private javax.swing.JLabel jLabel6;
     private javax.swing.JPanel jPanel1;
     private javax.swing.JLabel labelFotoUsuario;
     private javax.swing.JLabel labelGestionPrestamos;
@@ -1123,7 +787,6 @@ public class GUIPrincipalBibliotecario extends javax.swing.JFrame {
     private javax.swing.JLabel labelTitulo;
     private javax.swing.JPanel panelBackground;
     private javax.swing.JPanel panelBuscarRecurso;
-    private javax.swing.JPanel panelConsultarUsuarios;
     private javax.swing.JPanel panelContenedor;
     private javax.swing.JPanel panelGestionPrestamos;
     private javax.swing.JPanel panelGestionPrestamos2;
@@ -1131,20 +794,14 @@ public class GUIPrincipalBibliotecario extends javax.swing.JFrame {
     private javax.swing.JPanel panelGestionRecursos2;
     private javax.swing.JPanel panelGestionUsuarios;
     private javax.swing.JPanel panelGestionUsuarios2;
-    private javax.swing.JPanel panelIdentificarRecurso;
     private javax.swing.JPanel panelInformacion;
-    private javax.swing.JPanel panelInterbibliotecario;
     private javax.swing.JPanel panelMenuPrincipal;
     private javax.swing.JPanel panelMenuPrincipal2;
-    private javax.swing.JPanel panelModificarUsuario;
     private javax.swing.JPanel panelOpciones;
-    private javax.swing.JPanel panelPrestamoDomicilio;
-    private javax.swing.JPanel panelPrestamoSala;
     private javax.swing.JPanel panelRegistrarDevolucion;
+    private javax.swing.JPanel panelRegistrarPrestamo;
     private javax.swing.JPanel panelRegistrarRecurso;
     private javax.swing.JPanel panelRegistrarUsuario;
     private javax.swing.JPanel panelRegistrarUsuario2;
-    private javax.swing.JPanel panelRenovarUsuario;
-    private javax.swing.JPanel panelSolicitarFolio;
     // End of variables declaration//GEN-END:variables
 }

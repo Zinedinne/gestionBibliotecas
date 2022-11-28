@@ -1,8 +1,14 @@
 D:\Admin. De Proyectos De Software\biblioteca\bibliotecafei\src\main\java\com\mycompany\bibliotecafei\modelo\pojo\UsuarioStaff.java
+D:\Admin. De Proyectos De Software\biblioteca\bibliotecafei\src\main\java\com\mycompany\bibliotecafei\gui\GUIPrestamoDomicilio.java
 D:\Admin. De Proyectos De Software\biblioteca\bibliotecafei\src\main\java\com\mycompany\bibliotecafei\util\Utilidades.java
+D:\Admin. De Proyectos De Software\biblioteca\bibliotecafei\src\main\java\com\mycompany\bibliotecafei\gui\GUIBuscarRecurso.java
 D:\Admin. De Proyectos De Software\biblioteca\bibliotecafei\src\main\java\com\mycompany\bibliotecafei\modelo\DataBaseConnection.java
-D:\Admin. De Proyectos De Software\biblioteca\bibliotecafei\src\main\java\com\mycompany\bibliotecafei\Bibliotecafei.java
+D:\Admin. De Proyectos De Software\biblioteca\bibliotecafei\src\main\java\com\mycompany\bibliotecafei\gui\GUIRegistrarRecurso.java
 D:\Admin. De Proyectos De Software\biblioteca\bibliotecafei\src\main\java\com\mycompany\bibliotecafei\modelo\pojo\UsuarioBiblioteca.java
+D:\Admin. De Proyectos De Software\biblioteca\bibliotecafei\src\main\java\com\mycompany\bibliotecafei\gui\GUIRegistrarDevolucion.java
 D:\Admin. De Proyectos De Software\biblioteca\bibliotecafei\src\main\java\com\mycompany\bibliotecafei\modelo\pojo\RecursoDocumental.java
 D:\Admin. De Proyectos De Software\biblioteca\bibliotecafei\src\main\java\com\mycompany\bibliotecafei\gui\GUIPrincipalBibliotecario.java
 D:\Admin. De Proyectos De Software\biblioteca\bibliotecafei\src\main\java\com\mycompany\bibliotecafei\modelo\dao\UsuarioStaffDAO.java
+D:\Admin. De Proyectos De Software\biblioteca\bibliotecafei\src\main\java\com\mycompany\bibliotecafei\gui\GUIRegistrarUsuario.java
+D:\Admin. De Proyectos De Software\biblioteca\bibliotecafei\src\main\java\com\mycompany\bibliotecafei\Bibliotecafei.java
+D:\Admin. De Proyectos De Software\biblioteca\bibliotecafei\src\main\java\com\mycompany\bibliotecafei\gui\GUISolicitarFolio.java

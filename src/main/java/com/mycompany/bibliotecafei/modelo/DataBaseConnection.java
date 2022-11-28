@@ -9,9 +9,9 @@ import java.util.logging.Logger;
 public class DataBaseConnection {
     private static Connection connection;
     private static final String DRIVER = "com.mysql.jdbc.Driver";
-    private static final String DATABASE="jdbc:mysql://bibliotecafeei.ciogmkftr3wb.us-east-1.rds.amazonaws.com:3306/biblioteca";
-    private static final String USUARIO="admin";
-    private static final String PASSWORD="admin123";
+    private static final String DATABASE="jdbc:mysql://127.0.0.1:3306/bibliotecafei";
+    private static final String USUARIO="usuarioBiblioteca";
+    private static final String PASSWORD="ingSoft";
     
     public static Connection getConnection() throws SQLException{
         connect();
