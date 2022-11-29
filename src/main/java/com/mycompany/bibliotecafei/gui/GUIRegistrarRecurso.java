@@ -4,6 +4,13 @@
  */
 package com.mycompany.bibliotecafei.gui;
 
+import com.mycompany.bibliotecafei.modelo.dao.RecursoDocumentalDAO;
+import com.mycompany.bibliotecafei.modelo.pojo.RecursoDocumental;
+import java.sql.SQLException;
+import java.util.ArrayList;
+import javax.swing.JOptionPane;
+import javax.swing.JPanel;
+
 /**
  *
  * @author franz
@@ -16,6 +23,7 @@ public class GUIRegistrarRecurso extends javax.swing.JFrame {
     public GUIRegistrarRecurso() {
         initComponents();
         setLocationRelativeTo(null);
+        this.setDefaultCloseOperation(HIDE_ON_CLOSE);
     }
 
     /**
@@ -27,32 +35,352 @@ public class GUIRegistrarRecurso extends javax.swing.JFrame {
     // <editor-fold defaultstate="collapsed" desc="Generated Code">//GEN-BEGIN:initComponents
     private void initComponents() {
 
+        jPanel1 = new javax.swing.JPanel();
+        jLabel1 = new javax.swing.JLabel();
+        jScrollPane1 = new javax.swing.JScrollPane();
+        taDescripcion = new javax.swing.JTextArea();
+        tfNombreRecurso = new javax.swing.JTextField();
+        tfNombreAutor = new javax.swing.JTextField();
+        buttonCancelar = new javax.swing.JPanel();
+        jLabel5 = new javax.swing.JLabel();
+        jLabel2 = new javax.swing.JLabel();
+        jLabel3 = new javax.swing.JLabel();
+        jLabel4 = new javax.swing.JLabel();
+        buttonRegistrar = new javax.swing.JPanel();
+        jLabel6 = new javax.swing.JLabel();
+        jLabel7 = new javax.swing.JLabel();
+        cbTipoRecurso = new javax.swing.JComboBox<>();
+        jLabel8 = new javax.swing.JLabel();
+        cbSeccion = new javax.swing.JComboBox<>();
+        cbProcedencia = new javax.swing.JComboBox<>();
+        jLabel9 = new javax.swing.JLabel();
+
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
         setResizable(false);
+
+        jPanel1.setBackground(new java.awt.Color(0, 81, 158));
+        jPanel1.setPreferredSize(new java.awt.Dimension(1080, 70));
+
+        jLabel1.setFont(new java.awt.Font("Segoe UI", 1, 20)); // NOI18N
+        jLabel1.setForeground(new java.awt.Color(255, 255, 255));
+        jLabel1.setText("Formulario para registro de recurso documental");
+
+        javax.swing.GroupLayout jPanel1Layout = new javax.swing.GroupLayout(jPanel1);
+        jPanel1.setLayout(jPanel1Layout);
+        jPanel1Layout.setHorizontalGroup(
+            jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGroup(jPanel1Layout.createSequentialGroup()
+                .addGap(323, 323, 323)
+                .addComponent(jLabel1, javax.swing.GroupLayout.PREFERRED_SIZE, 461, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
+        );
+        jPanel1Layout.setVerticalGroup(
+            jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGroup(jPanel1Layout.createSequentialGroup()
+                .addGap(19, 19, 19)
+                .addComponent(jLabel1)
+                .addContainerGap(24, Short.MAX_VALUE))
+        );
+
+        taDescripcion.setColumns(20);
+        taDescripcion.setRows(5);
+        jScrollPane1.setViewportView(taDescripcion);
+
+        tfNombreRecurso.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                tfNombreRecursoActionPerformed(evt);
+            }
+        });
+
+        buttonCancelar.setBackground(new java.awt.Color(0, 81, 158));
+        buttonCancelar.addMouseListener(new java.awt.event.MouseAdapter() {
+            public void mouseClicked(java.awt.event.MouseEvent evt) {
+                buttonCancelarMouseClicked(evt);
+            }
+            public void mouseEntered(java.awt.event.MouseEvent evt) {
+                buttonCancelarMouseEntered(evt);
+            }
+            public void mouseExited(java.awt.event.MouseEvent evt) {
+                buttonCancelarMouseExited(evt);
+            }
+        });
+
+        jLabel5.setForeground(new java.awt.Color(255, 255, 255));
+        jLabel5.setText("Cancelar");
+
+        javax.swing.GroupLayout buttonCancelarLayout = new javax.swing.GroupLayout(buttonCancelar);
+        buttonCancelar.setLayout(buttonCancelarLayout);
+        buttonCancelarLayout.setHorizontalGroup(
+            buttonCancelarLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGroup(buttonCancelarLayout.createSequentialGroup()
+                .addGap(31, 31, 31)
+                .addComponent(jLabel5)
+                .addContainerGap(32, Short.MAX_VALUE))
+        );
+        buttonCancelarLayout.setVerticalGroup(
+            buttonCancelarLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, buttonCancelarLayout.createSequentialGroup()
+                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                .addComponent(jLabel5)
+                .addContainerGap())
+        );
+
+        jLabel2.setText("Nombre del recurso documental");
+
+        jLabel3.setText("Autor");
+
+        jLabel4.setText("Descripcion");
+
+        buttonRegistrar.setBackground(new java.awt.Color(0, 81, 158));
+        buttonRegistrar.addMouseListener(new java.awt.event.MouseAdapter() {
+            public void mouseClicked(java.awt.event.MouseEvent evt) {
+                buttonRegistrarMouseClicked(evt);
+            }
+            public void mouseEntered(java.awt.event.MouseEvent evt) {
+                buttonRegistrarMouseEntered(evt);
+            }
+            public void mouseExited(java.awt.event.MouseEvent evt) {
+                buttonRegistrarMouseExited(evt);
+            }
+        });
+
+        jLabel6.setForeground(new java.awt.Color(255, 255, 255));
+        jLabel6.setText("Registrar");
+
+        javax.swing.GroupLayout buttonRegistrarLayout = new javax.swing.GroupLayout(buttonRegistrar);
+        buttonRegistrar.setLayout(buttonRegistrarLayout);
+        buttonRegistrarLayout.setHorizontalGroup(
+            buttonRegistrarLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGroup(buttonRegistrarLayout.createSequentialGroup()
+                .addGap(31, 31, 31)
+                .addComponent(jLabel6)
+                .addContainerGap(32, Short.MAX_VALUE))
+        );
+        buttonRegistrarLayout.setVerticalGroup(
+            buttonRegistrarLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGroup(buttonRegistrarLayout.createSequentialGroup()
+                .addContainerGap()
+                .addComponent(jLabel6)
+                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
+        );
+
+        jLabel7.setText("Tipo de recurso");
+
+        cbTipoRecurso.setModel(new javax.swing.DefaultComboBoxModel<>(new String[] { "Libro", "DVD", "Mapa", "Tesis", "CD" }));
+        cbTipoRecurso.setBorder(null);
+        cbTipoRecurso.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                cbTipoRecursoActionPerformed(evt);
+            }
+        });
+
+        jLabel8.setText("Sección");
+
+        cbSeccion.setModel(new javax.swing.DefaultComboBoxModel<>(new String[] { "Ciencias", "Humanidades", "Estadística", "Política", "Informática", "Artes" }));
+        cbSeccion.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                cbSeccionActionPerformed(evt);
+            }
+        });
+
+        cbProcedencia.setModel(new javax.swing.DefaultComboBoxModel<>(new String[] { "Facultad de Estadística e informática", "Facultad de Medicina", "Facultad de Ingeniería", "Facultad de Arquitectura", "Facultad de Humanidades", "Facultad de Psicología", "Facultad de Biología" }));
+        cbProcedencia.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                cbProcedenciaActionPerformed(evt);
+            }
+        });
+
+        jLabel9.setText("Procedencia");
 
         javax.swing.GroupLayout layout = new javax.swing.GroupLayout(getContentPane());
         getContentPane().setLayout(layout);
         layout.setHorizontalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGap(0, 1106, Short.MAX_VALUE)
+            .addComponent(jPanel1, javax.swing.GroupLayout.DEFAULT_SIZE, 1106, Short.MAX_VALUE)
+            .addGroup(layout.createSequentialGroup()
+                .addGap(65, 65, 65)
+                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
+                    .addGroup(layout.createSequentialGroup()
+                        .addComponent(buttonRegistrar, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                        .addGap(18, 18, 18)
+                        .addComponent(buttonCancelar, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
+                    .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                        .addComponent(jLabel4)
+                        .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
+                            .addComponent(jScrollPane1, javax.swing.GroupLayout.PREFERRED_SIZE, 981, javax.swing.GroupLayout.PREFERRED_SIZE)
+                            .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, layout.createSequentialGroup()
+                                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                                    .addComponent(tfNombreRecurso, javax.swing.GroupLayout.PREFERRED_SIZE, 375, javax.swing.GroupLayout.PREFERRED_SIZE)
+                                    .addComponent(jLabel2))
+                                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                                    .addComponent(jLabel3)
+                                    .addComponent(tfNombreAutor, javax.swing.GroupLayout.PREFERRED_SIZE, 375, javax.swing.GroupLayout.PREFERRED_SIZE)))
+                            .addGroup(layout.createSequentialGroup()
+                                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                                    .addComponent(jLabel7)
+                                    .addComponent(cbTipoRecurso, javax.swing.GroupLayout.PREFERRED_SIZE, 249, javax.swing.GroupLayout.PREFERRED_SIZE))
+                                .addGap(127, 127, 127)
+                                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                                    .addComponent(cbSeccion, javax.swing.GroupLayout.PREFERRED_SIZE, 249, javax.swing.GroupLayout.PREFERRED_SIZE)
+                                    .addComponent(jLabel8))
+                                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                                    .addComponent(cbProcedencia, javax.swing.GroupLayout.PREFERRED_SIZE, 249, javax.swing.GroupLayout.PREFERRED_SIZE)
+                                    .addComponent(jLabel9))))))
+                .addContainerGap(60, Short.MAX_VALUE))
         );
         layout.setVerticalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGap(0, 708, Short.MAX_VALUE)
+            .addGroup(layout.createSequentialGroup()
+                .addComponent(jPanel1, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addGap(52, 52, 52)
+                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                    .addComponent(jLabel2)
+                    .addComponent(jLabel3))
+                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                    .addGroup(layout.createSequentialGroup()
+                        .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                            .addComponent(tfNombreRecurso, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                            .addComponent(tfNombreAutor, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
+                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 113, Short.MAX_VALUE)
+                        .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                            .addComponent(jLabel7)
+                            .addComponent(jLabel8))
+                        .addGap(28, 28, 28)
+                        .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                            .addComponent(cbTipoRecurso, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                            .addComponent(cbSeccion, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)))
+                    .addGroup(layout.createSequentialGroup()
+                        .addGap(0, 0, Short.MAX_VALUE)
+                        .addComponent(jLabel9)
+                        .addGap(28, 28, 28)
+                        .addComponent(cbProcedencia, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)))
+                .addGap(117, 117, 117)
+                .addComponent(jLabel4)
+                .addGap(18, 18, 18)
+                .addComponent(jScrollPane1, javax.swing.GroupLayout.PREFERRED_SIZE, 122, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addGap(38, 38, 38)
+                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                    .addComponent(buttonCancelar, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addComponent(buttonRegistrar, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
+                .addGap(30, 30, 30))
         );
 
         pack();
     }// </editor-fold>//GEN-END:initComponents
 
+    private void tfNombreRecursoActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_tfNombreRecursoActionPerformed
+        // TODO add your handling code here:
+    }//GEN-LAST:event_tfNombreRecursoActionPerformed
+
+    private void cbTipoRecursoActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_cbTipoRecursoActionPerformed
+        // TODO add your handling code here:
+    }//GEN-LAST:event_cbTipoRecursoActionPerformed
+
+    private void cbSeccionActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_cbSeccionActionPerformed
+        // TODO add your handling code here:
+    }//GEN-LAST:event_cbSeccionActionPerformed
+
+    private void cbProcedenciaActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_cbProcedenciaActionPerformed
+        // TODO add your handling code here:
+    }//GEN-LAST:event_cbProcedenciaActionPerformed
+
+    private void buttonRegistrarMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_buttonRegistrarMouseClicked
+        // TODO add your handling code here:
+        if(!hayCamposVacios()){
+            RecursoDocumental nuevoRecurso = new RecursoDocumental();
+            String nombreRecurso = tfNombreRecurso.getText();
+            String nombreAutor = tfNombreAutor.getText();
+            String descripcion = taDescripcion.getText();
+            nuevoRecurso.setNombre(nombreRecurso);
+            nuevoRecurso.setAutor(nombreAutor);
+            nuevoRecurso.setProcedencia(cbProcedencia.getSelectedItem().toString());
+            nuevoRecurso.setSeccion(cbSeccion.getSelectedItem().toString());
+            nuevoRecurso.setTipoRecurso(cbTipoRecurso.getSelectedItem().toString());
+            nuevoRecurso.setDescripcion(descripcion);
+            nuevoRecurso.setIdRecursoDocumental(RecursoDocumentalDAO.generarFolio(nuevoRecurso) );
+            try {
+                if(RecursoDocumentalDAO.validarNuevoID(nuevoRecurso.getIdRecursoDocumental())){
+                    RecursoDocumentalDAO.registroRecurso(nuevoRecurso);
+                    JOptionPane.showMessageDialog(rootPane, "Recurso registrado con éxito",
+                            "El recurso documental se ha registrado con éxito",
+                            JOptionPane.INFORMATION_MESSAGE);
+                    cerrarVentana();
+                }else{
+                    JOptionPane.showMessageDialog(rootPane, "El recurso documental no se pudo registrar, porque ya se encuentra registrado en la base de datos",
+                            "El recurso documental ya se encuentra registrado",
+                            JOptionPane.WARNING_MESSAGE);
+                }
+            } catch (SQLException e) {
+                JOptionPane.showMessageDialog(rootPane, "No hay conexión con la base de datos",
+                        "El recurso no pudo ser registrado porque no hay conexión a la base de datos, inténtelo más tarde",
+                        JOptionPane.ERROR_MESSAGE);
+            }
+        }else{
+            JOptionPane.showMessageDialog(rootPane, "Hay campos vacios",
+                    "Por favor introduzca la información en los campos faltantes", 
+                    JOptionPane.WARNING_MESSAGE);
+        }
+    }//GEN-LAST:event_buttonRegistrarMouseClicked
+
+    private void buttonRegistrarMouseEntered(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_buttonRegistrarMouseEntered
+        // TODO add your handling code here:
+        animacionPasarMouse(buttonRegistrar);
+    }//GEN-LAST:event_buttonRegistrarMouseEntered
+
+    private void buttonRegistrarMouseExited(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_buttonRegistrarMouseExited
+        // TODO add your handling code here:
+        animacionSalirMouse(buttonRegistrar);
+    }//GEN-LAST:event_buttonRegistrarMouseExited
+
+    private void buttonCancelarMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_buttonCancelarMouseClicked
+        // TODO add your handling code here:
+        cerrarVentana();
+    }//GEN-LAST:event_buttonCancelarMouseClicked
+
+    private void buttonCancelarMouseEntered(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_buttonCancelarMouseEntered
+        // TODO add your handling code here:
+        animacionPasarMouse(buttonCancelar);
+    }//GEN-LAST:event_buttonCancelarMouseEntered
+
+    private void buttonCancelarMouseExited(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_buttonCancelarMouseExited
+        // TODO add your handling code here:
+        animacionSalirMouse(buttonCancelar);
+    }//GEN-LAST:event_buttonCancelarMouseExited
+    
+    private void cerrarVentana(){
+        this.setVisible(false);
+    }
+    
+    private void animacionPasarMouse(JPanel panelAnimacion){
+        panelAnimacion.setBackground(new java.awt.Color(87, 145, 195));
+    }
+    
+    private  void animacionSalirMouse(JPanel panelAnimacion){
+        panelAnimacion.setBackground(new java.awt.Color(0,81,158));
+    }
+    
+    private boolean hayCamposVacios(){
+        boolean camposVacios = false;
+        ArrayList <String> resultadosTF = new ArrayList();
+        resultadosTF.add(tfNombreAutor.getText());
+        resultadosTF.add(tfNombreRecurso.getText());
+        resultadosTF.add(taDescripcion.getText());
+        for (String resultado : resultadosTF){
+            if (resultado.equals("")){
+                camposVacios = true;
+                break;
+            }
+        }
+        return camposVacios;
+    }
+
     /**
      * @param args the command line arguments
      */
     public static void main(String args[]) {
-        /* Set the Nimbus look and feel */
-        //<editor-fold defaultstate="collapsed" desc=" Look and feel setting code (optional) ">
-        /* If Nimbus (introduced in Java SE 6) is not available, stay with the default look and feel.
-         * For details see http://download.oracle.com/javase/tutorial/uiswing/lookandfeel/plaf.html 
-         */
+
         try {
             for (javax.swing.UIManager.LookAndFeelInfo info : javax.swing.UIManager.getInstalledLookAndFeels()) {
                 if ("Nimbus".equals(info.getName())) {
@@ -69,19 +397,34 @@ public class GUIRegistrarRecurso extends javax.swing.JFrame {
         } catch (javax.swing.UnsupportedLookAndFeelException ex) {
             java.util.logging.Logger.getLogger(GUIRegistrarRecurso.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
         }
-        //</editor-fold>
-        //</editor-fold>
-        //</editor-fold>
-        //</editor-fold>
 
-        /* Create and display the form */
         java.awt.EventQueue.invokeLater(new Runnable() {
             public void run() {
                 new GUIRegistrarRecurso().setVisible(true);
             }
         });
+        
     }
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
+    private javax.swing.JPanel buttonCancelar;
+    private javax.swing.JPanel buttonRegistrar;
+    private javax.swing.JComboBox<String> cbProcedencia;
+    private javax.swing.JComboBox<String> cbSeccion;
+    private javax.swing.JComboBox<String> cbTipoRecurso;
+    private javax.swing.JLabel jLabel1;
+    private javax.swing.JLabel jLabel2;
+    private javax.swing.JLabel jLabel3;
+    private javax.swing.JLabel jLabel4;
+    private javax.swing.JLabel jLabel5;
+    private javax.swing.JLabel jLabel6;
+    private javax.swing.JLabel jLabel7;
+    private javax.swing.JLabel jLabel8;
+    private javax.swing.JLabel jLabel9;
+    private javax.swing.JPanel jPanel1;
+    private javax.swing.JScrollPane jScrollPane1;
+    private javax.swing.JTextArea taDescripcion;
+    private javax.swing.JTextField tfNombreAutor;
+    private javax.swing.JTextField tfNombreRecurso;
     // End of variables declaration//GEN-END:variables
 }
