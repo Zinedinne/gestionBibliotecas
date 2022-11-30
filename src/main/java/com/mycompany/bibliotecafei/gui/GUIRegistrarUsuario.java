@@ -27,22 +27,110 @@ public class GUIRegistrarUsuario extends javax.swing.JFrame {
     // <editor-fold defaultstate="collapsed" desc="Generated Code">//GEN-BEGIN:initComponents
     private void initComponents() {
 
+        jPanel1 = new javax.swing.JPanel();
+        lblIdUsuario = new javax.swing.JLabel();
+        lblNombre = new javax.swing.JLabel();
+        lblGenero = new javax.swing.JLabel();
+        lblTelefono = new javax.swing.JLabel();
+        lblDomicilio = new javax.swing.JLabel();
+        lblTipoUsuario = new javax.swing.JLabel();
+        lblCorreo = new javax.swing.JLabel();
+        btnRegistrarUsuario = new javax.swing.JButton();
+        tfCorreo = new javax.swing.JTextField();
+        tfIdUsuario = new javax.swing.JTextField();
+        tfNombre = new javax.swing.JTextField();
+        tfTelefono = new javax.swing.JTextField();
+        tfDomicilio = new javax.swing.JTextField();
+        cbGenero = new javax.swing.JComboBox<>();
+        cbTipoUsuario = new javax.swing.JComboBox<>();
+        lblRegistroUsuarios = new javax.swing.JLabel();
+
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
+        setPreferredSize(new java.awt.Dimension(1106, 708));
         setResizable(false);
+
+        jPanel1.setBackground(new java.awt.Color(255, 255, 255));
+        jPanel1.setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
+
+        lblIdUsuario.setText("Identificador Usuario");
+        jPanel1.add(lblIdUsuario, new org.netbeans.lib.awtextra.AbsoluteConstraints(270, 130, -1, -1));
+
+        lblNombre.setText("Nombre");
+        jPanel1.add(lblNombre, new org.netbeans.lib.awtextra.AbsoluteConstraints(270, 180, -1, -1));
+
+        lblGenero.setText("Género");
+        jPanel1.add(lblGenero, new org.netbeans.lib.awtextra.AbsoluteConstraints(270, 240, -1, -1));
+
+        lblTelefono.setText("Teléfono");
+        jPanel1.add(lblTelefono, new org.netbeans.lib.awtextra.AbsoluteConstraints(270, 300, -1, -1));
+
+        lblDomicilio.setText("Domicilio");
+        jPanel1.add(lblDomicilio, new org.netbeans.lib.awtextra.AbsoluteConstraints(270, 360, -1, -1));
+
+        lblTipoUsuario.setText("Tipo de usuario");
+        jPanel1.add(lblTipoUsuario, new org.netbeans.lib.awtextra.AbsoluteConstraints(270, 420, -1, -1));
+
+        lblCorreo.setText("Correo");
+        jPanel1.add(lblCorreo, new org.netbeans.lib.awtextra.AbsoluteConstraints(270, 480, -1, -1));
+
+        btnRegistrarUsuario.setBackground(new java.awt.Color(0, 153, 0));
+        btnRegistrarUsuario.setFont(new java.awt.Font("Segoe UI", 1, 12)); // NOI18N
+        btnRegistrarUsuario.setForeground(new java.awt.Color(255, 255, 255));
+        btnRegistrarUsuario.setText("Registrar");
+        btnRegistrarUsuario.setOpaque(true);
+        jPanel1.add(btnRegistrarUsuario, new org.netbeans.lib.awtextra.AbsoluteConstraints(490, 610, 120, 50));
+        jPanel1.add(tfCorreo, new org.netbeans.lib.awtextra.AbsoluteConstraints(400, 470, 410, -1));
+
+        tfIdUsuario.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                tfIdUsuarioActionPerformed(evt);
+            }
+        });
+        jPanel1.add(tfIdUsuario, new org.netbeans.lib.awtextra.AbsoluteConstraints(400, 130, 410, -1));
+        jPanel1.add(tfNombre, new org.netbeans.lib.awtextra.AbsoluteConstraints(400, 180, 410, -1));
+        jPanel1.add(tfTelefono, new org.netbeans.lib.awtextra.AbsoluteConstraints(400, 290, 410, -1));
+        jPanel1.add(tfDomicilio, new org.netbeans.lib.awtextra.AbsoluteConstraints(400, 350, 410, -1));
+
+        cbGenero.setModel(new javax.swing.DefaultComboBoxModel<>(new String[] { "masculino", "femenino" }));
+        cbGenero.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                cbGeneroActionPerformed(evt);
+            }
+        });
+        jPanel1.add(cbGenero, new org.netbeans.lib.awtextra.AbsoluteConstraints(400, 230, 410, -1));
+
+        cbTipoUsuario.setModel(new javax.swing.DefaultComboBoxModel<>(new String[] { "estudiante", "academico" }));
+        jPanel1.add(cbTipoUsuario, new org.netbeans.lib.awtextra.AbsoluteConstraints(400, 410, 410, -1));
+
+        lblRegistroUsuarios.setBackground(new java.awt.Color(0, 81, 158));
+        lblRegistroUsuarios.setFont(new java.awt.Font("Segoe UI", 1, 20)); // NOI18N
+        lblRegistroUsuarios.setForeground(new java.awt.Color(255, 255, 255));
+        lblRegistroUsuarios.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
+        lblRegistroUsuarios.setText("Registro de usuarios");
+        lblRegistroUsuarios.setOpaque(true);
+        jPanel1.add(lblRegistroUsuarios, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 0, 1110, 40));
 
         javax.swing.GroupLayout layout = new javax.swing.GroupLayout(getContentPane());
         getContentPane().setLayout(layout);
         layout.setHorizontalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGap(0, 1106, Short.MAX_VALUE)
+            .addComponent(jPanel1, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
         );
         layout.setVerticalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGap(0, 708, Short.MAX_VALUE)
+            .addComponent(jPanel1, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
         );
 
         pack();
     }// </editor-fold>//GEN-END:initComponents
+
+    private void tfIdUsuarioActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_tfIdUsuarioActionPerformed
+        // TODO add your handling code here:
+    }//GEN-LAST:event_tfIdUsuarioActionPerformed
+
+    private void cbGeneroActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_cbGeneroActionPerformed
+        // TODO add your handling code here:
+    }//GEN-LAST:event_cbGeneroActionPerformed
 
     /**
      * @param args the command line arguments
@@ -81,5 +169,22 @@ public class GUIRegistrarUsuario extends javax.swing.JFrame {
     }
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
+    private javax.swing.JButton btnRegistrarUsuario;
+    private javax.swing.JComboBox<String> cbGenero;
+    private javax.swing.JComboBox<String> cbTipoUsuario;
+    private javax.swing.JPanel jPanel1;
+    private javax.swing.JLabel lblCorreo;
+    private javax.swing.JLabel lblDomicilio;
+    private javax.swing.JLabel lblGenero;
+    private javax.swing.JLabel lblIdUsuario;
+    private javax.swing.JLabel lblNombre;
+    private javax.swing.JLabel lblRegistroUsuarios;
+    private javax.swing.JLabel lblTelefono;
+    private javax.swing.JLabel lblTipoUsuario;
+    private javax.swing.JTextField tfCorreo;
+    private javax.swing.JTextField tfDomicilio;
+    private javax.swing.JTextField tfIdUsuario;
+    private javax.swing.JTextField tfNombre;
+    private javax.swing.JTextField tfTelefono;
     // End of variables declaration//GEN-END:variables
 }
