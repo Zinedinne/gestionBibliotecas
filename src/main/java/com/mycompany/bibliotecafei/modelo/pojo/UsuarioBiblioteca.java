@@ -5,40 +5,34 @@ package com.mycompany.bibliotecafei.modelo.pojo;
  * @author franz
  */
 public class UsuarioBiblioteca {
-    private int idUsuarioBiblioteca;
+    private String idUsuarioBiblioteca;
     private String nombreCompleto;
     private String genero;
     private String domicilio;
     private String correo;
     private String telefono;
-    private String matricula;
-    private String numeroPersonal;
-    private String carrera;
     private String periodo;
     private String tipoUsuario;
 
     public UsuarioBiblioteca() {
     }
 
-    public UsuarioBiblioteca(int idUsuarioBiblioteca, String nombreCompleto, String genero, String domicilio, String correo, String telefono, String matricula, String numeroPersonal, String carrera, String periodo, String tipoUsuario) {
+    public UsuarioBiblioteca(String idUsuarioBiblioteca, String nombreCompleto, String genero, String domicilio, String correo, String telefono, String matricula, String numeroPersonal, String carrera, String periodo, String tipoUsuario) {
         this.idUsuarioBiblioteca = idUsuarioBiblioteca;
         this.nombreCompleto = nombreCompleto;
         this.genero = genero;
         this.domicilio = domicilio;
         this.correo = correo;
         this.telefono = telefono;
-        this.matricula = matricula;
-        this.numeroPersonal = numeroPersonal;
-        this.carrera = carrera;
         this.periodo = periodo;
         this.tipoUsuario = tipoUsuario;
     }
 
-    public int getIdUsuarioBiblioteca() {
+    public String getIdUsuarioBiblioteca() {
         return idUsuarioBiblioteca;
     }
 
-    public void setIdUsuarioBiblioteca(int idUsuarioBiblioteca) {
+    public void setIdUsuarioBiblioteca(String idUsuarioBiblioteca) {
         this.idUsuarioBiblioteca = idUsuarioBiblioteca;
     }
 
@@ -82,30 +76,6 @@ public class UsuarioBiblioteca {
         this.telefono = telefono;
     }
 
-    public String getMatricula() {
-        return matricula;
-    }
-
-    public void setMatricula(String matricula) {
-        this.matricula = matricula;
-    }
-
-    public String getNumeroPersonal() {
-        return numeroPersonal;
-    }
-
-    public void setNumeroPersonal(String numeroPersonal) {
-        this.numeroPersonal = numeroPersonal;
-    }
-
-    public String getCarrera() {
-        return carrera;
-    }
-
-    public void setCarrera(String carrera) {
-        this.carrera = carrera;
-    }
-
     public String getPeriodo() {
         return periodo;
     }
@@ -124,8 +94,10 @@ public class UsuarioBiblioteca {
 
     @Override
     public String toString() {
-        return "UsuarioBiblioteca{" + "idUsuarioBiblioteca=" + idUsuarioBiblioteca + ", nombreCompleto=" + nombreCompleto + ", genero=" + genero + ", domicilio=" + domicilio + ", correo=" + correo + ", telefono=" + telefono + ", matricula=" + matricula + ", numeroPersonal=" + numeroPersonal + ", carrera=" + carrera + ", periodo=" + periodo + ", tipoUsuario=" + tipoUsuario + '}';
+        return "UsuarioBiblioteca{" + "idUsuarioBiblioteca=" + idUsuarioBiblioteca + ", nombreCompleto=" + nombreCompleto + ", genero=" + genero + ", domicilio=" + domicilio + ", correo=" + correo + ", telefono=" + telefono + ", periodo=" + periodo + ", tipoUsuario=" + tipoUsuario + '}';
     }
+
+    
     
     
 }

@@ -4,6 +4,9 @@
  */
 package com.mycompany.bibliotecafei.gui;
 
+import com.mycompany.bibliotecafei.modelo.dao.UsuarioBibliotecaDAO;
+import com.mycompany.bibliotecafei.modelo.pojo.UsuarioBiblioteca;
+
 /**
  *
  * @author franz
@@ -78,6 +81,11 @@ public class GUIRegistrarUsuario extends javax.swing.JFrame {
         btnRegistrarUsuario.setForeground(new java.awt.Color(255, 255, 255));
         btnRegistrarUsuario.setText("Registrar");
         btnRegistrarUsuario.setOpaque(true);
+        btnRegistrarUsuario.addMouseListener(new java.awt.event.MouseAdapter() {
+            public void mouseClicked(java.awt.event.MouseEvent evt) {
+                btnRegistrarUsuarioMouseClicked(evt);
+            }
+        });
         jPanel1.add(btnRegistrarUsuario, new org.netbeans.lib.awtextra.AbsoluteConstraints(490, 610, 120, 50));
         jPanel1.add(tfCorreo, new org.netbeans.lib.awtextra.AbsoluteConstraints(400, 470, 410, -1));
 
@@ -131,6 +139,19 @@ public class GUIRegistrarUsuario extends javax.swing.JFrame {
     private void cbGeneroActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_cbGeneroActionPerformed
         // TODO add your handling code here:
     }//GEN-LAST:event_cbGeneroActionPerformed
+
+    private void btnRegistrarUsuarioMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_btnRegistrarUsuarioMouseClicked
+        UsuarioBiblioteca usuario = new UsuarioBiblioteca();
+        UsuarioBibliotecaDAO usuariodao = new UsuarioBibliotecaDAO();
+        usuario.setIdUsuarioBiblioteca(tfIdUsuario.getText());
+        usuario.setNombreCompleto(tfNombre.getText());
+        usuario.setGenero(cbGenero.getSelectedItem().toString());
+        usuario.setTelefono(tfTelefono.getText());
+        usuario.setDomicilio(tfDomicilio.getText());
+        usuario.setTipoUsuario(cbTipoUsuario.getSelectedItem().toString());
+        usuario.setCorreo(tfCorreo.getText());
+        usuariodao.registrarUsuario(usuario);
+    }//GEN-LAST:event_btnRegistrarUsuarioMouseClicked
 
     /**
      * @param args the command line arguments
