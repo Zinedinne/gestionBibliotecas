@@ -2,7 +2,7 @@ package com.mycompany.bibliotecafei.modelo.dao;
 
 /**
  *
- * @author franz
+ * @author Zinedinne
  */
 public class UsuarioStaffDAO {
         
