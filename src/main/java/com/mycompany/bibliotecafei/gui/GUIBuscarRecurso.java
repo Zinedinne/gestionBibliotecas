@@ -4,6 +4,16 @@
  */
 package com.mycompany.bibliotecafei.gui;
 
+import com.mycompany.bibliotecafei.modelo.dao.RecursoDocumentalDAO;
+import com.mycompany.bibliotecafei.modelo.pojo.RecursoDocumental;
+import java.sql.SQLException;
+import java.util.ArrayList;
+import javax.swing.JOptionPane;
+import javax.swing.JPanel;
+import javax.swing.RowFilter;
+import javax.swing.table.DefaultTableModel;
+import javax.swing.table.TableRowSorter;
+
 /**
  *
  * @author franz
@@ -13,9 +23,13 @@ public class GUIBuscarRecurso extends javax.swing.JFrame {
     /**
      * Creates new form GUIBuscarRecurso
      */
+    
+    DefaultTableModel modeloTable;
+    
     public GUIBuscarRecurso() {
         initComponents();
         setLocationRelativeTo(null);
+        llenarTabla();
     }
 
     /**
@@ -27,26 +41,251 @@ public class GUIBuscarRecurso extends javax.swing.JFrame {
     // <editor-fold defaultstate="collapsed" desc="Generated Code">//GEN-BEGIN:initComponents
     private void initComponents() {
 
-        setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
+        panelContenedor = new javax.swing.JPanel();
+        jPanel2 = new javax.swing.JPanel();
+        jLabel1 = new javax.swing.JLabel();
+        jScrollPane1 = new javax.swing.JScrollPane();
+        tableResultados = new javax.swing.JTable();
+        tfTitulo = new javax.swing.JTextField();
+        jLabel2 = new javax.swing.JLabel();
+        buttonVolver = new javax.swing.JPanel();
+        jLabel4 = new javax.swing.JLabel();
+        jLabel5 = new javax.swing.JLabel();
+
         setResizable(false);
+
+        panelContenedor.setBackground(new java.awt.Color(255, 255, 255));
+
+        jPanel2.setBackground(new java.awt.Color(0, 81, 158));
+        jPanel2.setMinimumSize(new java.awt.Dimension(1080, 70));
+        jPanel2.setPreferredSize(new java.awt.Dimension(1080, 70));
+
+        jLabel1.setFont(new java.awt.Font("Segoe UI", 1, 20)); // NOI18N
+        jLabel1.setForeground(new java.awt.Color(255, 255, 255));
+        jLabel1.setText("Busqueda de recurso");
+
+        javax.swing.GroupLayout jPanel2Layout = new javax.swing.GroupLayout(jPanel2);
+        jPanel2.setLayout(jPanel2Layout);
+        jPanel2Layout.setHorizontalGroup(
+            jPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGroup(jPanel2Layout.createSequentialGroup()
+                .addGap(450, 450, 450)
+                .addComponent(jLabel1)
+                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
+        );
+        jPanel2Layout.setVerticalGroup(
+            jPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGroup(jPanel2Layout.createSequentialGroup()
+                .addGap(18, 18, 18)
+                .addComponent(jLabel1)
+                .addContainerGap(25, Short.MAX_VALUE))
+        );
+
+        tableResultados.setModel(new javax.swing.table.DefaultTableModel(
+            new Object [][] {
+
+            },
+            new String [] {
+                "Folio", "Titulo", "Autor", "Estado", "Seccion", "Tipo de recurso", "Procedencia"
+            }
+        ) {
+            Class[] types = new Class [] {
+                java.lang.String.class, java.lang.String.class, java.lang.String.class, java.lang.String.class, java.lang.String.class, java.lang.String.class, java.lang.String.class
+            };
+            boolean[] canEdit = new boolean [] {
+                false, false, false, false, false, false, false
+            };
+
+            public Class getColumnClass(int columnIndex) {
+                return types [columnIndex];
+            }
+
+            public boolean isCellEditable(int rowIndex, int columnIndex) {
+                return canEdit [columnIndex];
+            }
+        });
+        jScrollPane1.setViewportView(tableResultados);
+        if (tableResultados.getColumnModel().getColumnCount() > 0) {
+            tableResultados.getColumnModel().getColumn(0).setResizable(false);
+            tableResultados.getColumnModel().getColumn(1).setResizable(false);
+            tableResultados.getColumnModel().getColumn(2).setResizable(false);
+            tableResultados.getColumnModel().getColumn(3).setResizable(false);
+            tableResultados.getColumnModel().getColumn(4).setResizable(false);
+            tableResultados.getColumnModel().getColumn(5).setResizable(false);
+            tableResultados.getColumnModel().getColumn(6).setResizable(false);
+        }
+
+        tfTitulo.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                tfTituloActionPerformed(evt);
+            }
+        });
+        tfTitulo.addKeyListener(new java.awt.event.KeyAdapter() {
+            public void keyReleased(java.awt.event.KeyEvent evt) {
+                tfTituloKeyReleased(evt);
+            }
+        });
+
+        jLabel2.setText("Titulo de recurso documental");
+
+        buttonVolver.setBackground(new java.awt.Color(0, 148, 0));
+        buttonVolver.addMouseListener(new java.awt.event.MouseAdapter() {
+            public void mouseClicked(java.awt.event.MouseEvent evt) {
+                buttonVolverMouseClicked(evt);
+            }
+            public void mouseEntered(java.awt.event.MouseEvent evt) {
+                buttonVolverMouseEntered(evt);
+            }
+            public void mouseExited(java.awt.event.MouseEvent evt) {
+                buttonVolverMouseExited(evt);
+            }
+        });
+
+        jLabel4.setForeground(new java.awt.Color(255, 255, 255));
+        jLabel4.setText("Volver");
+
+        javax.swing.GroupLayout buttonVolverLayout = new javax.swing.GroupLayout(buttonVolver);
+        buttonVolver.setLayout(buttonVolverLayout);
+        buttonVolverLayout.setHorizontalGroup(
+            buttonVolverLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGroup(buttonVolverLayout.createSequentialGroup()
+                .addGap(32, 32, 32)
+                .addComponent(jLabel4)
+                .addContainerGap(31, Short.MAX_VALUE))
+        );
+        buttonVolverLayout.setVerticalGroup(
+            buttonVolverLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGroup(buttonVolverLayout.createSequentialGroup()
+                .addContainerGap()
+                .addComponent(jLabel4)
+                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
+        );
+
+        jLabel5.setFont(new java.awt.Font("Segoe UI", 1, 18)); // NOI18N
+        jLabel5.setText("Resultados de búsqueda");
+
+        javax.swing.GroupLayout panelContenedorLayout = new javax.swing.GroupLayout(panelContenedor);
+        panelContenedor.setLayout(panelContenedorLayout);
+        panelContenedorLayout.setHorizontalGroup(
+            panelContenedorLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addComponent(jPanel2, javax.swing.GroupLayout.DEFAULT_SIZE, 1106, Short.MAX_VALUE)
+            .addGroup(panelContenedorLayout.createSequentialGroup()
+                .addGap(56, 56, 56)
+                .addGroup(panelContenedorLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                    .addGroup(panelContenedorLayout.createSequentialGroup()
+                        .addComponent(jLabel5)
+                        .addGap(0, 0, Short.MAX_VALUE))
+                    .addGroup(panelContenedorLayout.createSequentialGroup()
+                        .addComponent(jLabel2)
+                        .addGap(68, 68, 68)
+                        .addComponent(tfTitulo, javax.swing.GroupLayout.PREFERRED_SIZE, 479, javax.swing.GroupLayout.PREFERRED_SIZE)
+                        .addContainerGap(348, Short.MAX_VALUE))
+                    .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, panelContenedorLayout.createSequentialGroup()
+                        .addGroup(panelContenedorLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
+                            .addComponent(jScrollPane1, javax.swing.GroupLayout.Alignment.LEADING)
+                            .addGroup(panelContenedorLayout.createSequentialGroup()
+                                .addGap(0, 0, Short.MAX_VALUE)
+                                .addComponent(buttonVolver, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)))
+                        .addGap(57, 57, 57))))
+        );
+        panelContenedorLayout.setVerticalGroup(
+            panelContenedorLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGroup(panelContenedorLayout.createSequentialGroup()
+                .addComponent(jPanel2, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addGap(42, 42, 42)
+                .addGroup(panelContenedorLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                    .addComponent(tfTitulo, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addComponent(jLabel2))
+                .addGap(18, 18, 18)
+                .addComponent(jLabel5)
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                .addComponent(jScrollPane1, javax.swing.GroupLayout.PREFERRED_SIZE, 403, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 56, Short.MAX_VALUE)
+                .addComponent(buttonVolver, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addGap(38, 38, 38))
+        );
 
         javax.swing.GroupLayout layout = new javax.swing.GroupLayout(getContentPane());
         getContentPane().setLayout(layout);
         layout.setHorizontalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGap(0, 1106, Short.MAX_VALUE)
+            .addComponent(panelContenedor, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
         );
         layout.setVerticalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGap(0, 708, Short.MAX_VALUE)
+            .addComponent(panelContenedor, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
         );
 
         pack();
     }// </editor-fold>//GEN-END:initComponents
 
+    private void tfTituloActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_tfTituloActionPerformed
+        // TODO add your handling code here:
+    }//GEN-LAST:event_tfTituloActionPerformed
+
+    private void buttonVolverMouseEntered(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_buttonVolverMouseEntered
+        animacionPasarMouse(buttonVolver);
+    }//GEN-LAST:event_buttonVolverMouseEntered
+
+    private void buttonVolverMouseExited(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_buttonVolverMouseExited
+        animacionSalirMouse(buttonVolver);
+    }//GEN-LAST:event_buttonVolverMouseExited
+
+    private void buttonVolverMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_buttonVolverMouseClicked
+        cerrarVentana();
+    }//GEN-LAST:event_buttonVolverMouseClicked
+
+    private void tfTituloKeyReleased(java.awt.event.KeyEvent evt) {//GEN-FIRST:event_tfTituloKeyReleased
+        String busqueda = tfTitulo.getText();
+        busquedaPorTitulo(busqueda);
+    }//GEN-LAST:event_tfTituloKeyReleased
+
     /**
      * @param args the command line arguments
      */
+    
+    public void llenarTabla() {
+        ArrayList<RecursoDocumental> recursos;
+        try {
+            recursos = RecursoDocumentalDAO.recuperarRecursos();
+            modeloTable = (DefaultTableModel)tableResultados.getModel();
+            for (int i=0; i<recursos.size(); i++){
+                Object[] resultados = {recursos.get(i).getIdRecursoDocumental(),
+                    recursos.get(i).getNombre(),
+                    recursos.get(i).getAutor(),
+                    recursos.get(i).getEstado(),
+                    recursos.get(i).getSeccion(),
+                    recursos.get(i).getTipoRecurso(),
+                    recursos.get(i).getProcedencia()};
+                modeloTable.addRow(resultados);
+            }
+        } catch (SQLException e) {
+            JOptionPane.showMessageDialog(rootPane, "No hay conexión a la base de datos",
+                    "No hay conexión a la base de datos, vuelva a intentarlo más tarde",JOptionPane.ERROR_MESSAGE);
+            e.printStackTrace();
+        }
+        
+    }
+    
+    public void busquedaPorTitulo(String busqueda){
+        modeloTable =(DefaultTableModel) tableResultados.getModel();
+        TableRowSorter<DefaultTableModel> trs = new TableRowSorter<>(modeloTable);
+        tableResultados.setRowSorter(trs);
+        trs.setRowFilter(RowFilter.regexFilter(busqueda));
+    }
+    
+    private void cerrarVentana(){
+        this.setVisible(false);
+    }
+    
+    private void animacionPasarMouse(JPanel panelAnimacion){
+        panelAnimacion.setBackground(new java.awt.Color(85,186,85));
+    }
+    
+    private  void animacionSalirMouse(JPanel panelAnimacion){
+        panelAnimacion.setBackground(new java.awt.Color(0,148,0));
+    }
+    
     public static void main(String args[]) {
         /* Set the Nimbus look and feel */
         //<editor-fold defaultstate="collapsed" desc=" Look and feel setting code (optional) ">
@@ -80,5 +319,15 @@ public class GUIBuscarRecurso extends javax.swing.JFrame {
     }
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
+    private javax.swing.JPanel buttonVolver;
+    private javax.swing.JLabel jLabel1;
+    private javax.swing.JLabel jLabel2;
+    private javax.swing.JLabel jLabel4;
+    private javax.swing.JLabel jLabel5;
+    private javax.swing.JPanel jPanel2;
+    private javax.swing.JScrollPane jScrollPane1;
+    private javax.swing.JPanel panelContenedor;
+    private javax.swing.JTable tableResultados;
+    private javax.swing.JTextField tfTitulo;
     // End of variables declaration//GEN-END:variables
 }
