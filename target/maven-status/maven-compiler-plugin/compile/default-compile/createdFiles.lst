@@ -10,6 +10,7 @@ com\mycompany\bibliotecafei\gui\GUILogin$6.class
 com\mycompany\bibliotecafei\gui\GUISolicitarFolio.class
 com\mycompany\bibliotecafei\gui\GUIRegistrarRecurso$1.class
 com\mycompany\bibliotecafei\gui\GUIRegistrarRecurso.class
+com\mycompany\bibliotecafei\gui\GUIRegistrarUsuario$3.class
 com\mycompany\bibliotecafei\gui\GUIPrincipalBibliotecario$6.class
 com\mycompany\bibliotecafei\modelo\pojo\RecursoDocumental.class
 com\mycompany\bibliotecafei\gui\GUIRegistrarRecurso$5.class
@@ -27,6 +28,7 @@ com\mycompany\bibliotecafei\gui\GUIPrincipalBibliotecario$4.class
 com\mycompany\bibliotecafei\Bibliotecafei.class
 com\mycompany\bibliotecafei\modelo\DataBaseConnection.class
 com\mycompany\bibliotecafei\modelo\pojo\UsuarioBiblioteca.class
+com\mycompany\bibliotecafei\gui\GUIRegistrarUsuario$2.class
 com\mycompany\bibliotecafei\gui\GUIPrestamoDomicilio.class
 com\mycompany\bibliotecafei\gui\GUIRegistrarRecurso$4.class
 com\mycompany\bibliotecafei\gui\GUIPrincipalBibliotecario$7.class

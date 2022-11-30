@@ -112,6 +112,7 @@ public class GUILogin extends javax.swing.JFrame {
         jPanel1.add(pfPassword, new org.netbeans.lib.awtextra.AbsoluteConstraints(320, 380, 490, -1));
 
         btnEntrar.setBackground(new java.awt.Color(0, 153, 0));
+        btnEntrar.setFont(new java.awt.Font("Segoe UI", 1, 12)); // NOI18N
         btnEntrar.setForeground(new java.awt.Color(255, 255, 255));
         btnEntrar.setText("Entrar");
         btnEntrar.addMouseListener(new java.awt.event.MouseAdapter() {
@@ -168,8 +169,9 @@ public class GUILogin extends javax.swing.JFrame {
         usuario.setPassword(shaConversor.convertir(contrasena));
         usuarioLogeado = usuarioDao.accederSistema(usuario);
         System.out.println(usuarioLogeado);  
+        System.out.println(usuarioLogeado.getTipoUsuario()); 
         GUIPrincipalBibliotecario principal = new GUIPrincipalBibliotecario();
-        if(usuarioLogeado.getTipoUsuario() == "bibliotecario"){
+        if(usuarioLogeado.getTipoUsuario().equals("bibliotecario")){
             principal.setVisible(true);
         }else{
             JOptionPane.showMessageDialog(null,"Revisa las credenciales");
