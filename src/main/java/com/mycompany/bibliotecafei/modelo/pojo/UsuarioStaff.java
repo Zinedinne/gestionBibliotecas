@@ -21,6 +21,16 @@ public class UsuarioStaff {
         this.password = password;
     }
 
+    public int getIdUsuarioStaff() {
+        return idUsuarioStaff;
+    }
+
+    public void setIdUsuarioStaff(int idUsuarioStaff) {
+        this.idUsuarioStaff = idUsuarioStaff;
+    }
+    
+    
+    
     public String getNombreUsuarioStaff() {
         return nombreUsuarioStaff;
     }
@@ -51,6 +61,11 @@ public class UsuarioStaff {
 
     public void setPassword(String password) {
         this.password = password;
+    }
+
+    @Override
+    public String toString() {
+        return "UsuarioStaff{" + "idUsuarioStaff=" + idUsuarioStaff + ", nombreUsuarioStaff=" + nombreUsuarioStaff + ", tipoUsuario=" + tipoUsuario + ", nombreUsuario=" + nombreUsuario + ", password=" + password + '}';
     }
     
     

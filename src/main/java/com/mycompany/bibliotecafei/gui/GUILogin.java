@@ -4,6 +4,11 @@
  */
 package com.mycompany.bibliotecafei.gui;
 
+import com.mycompany.bibliotecafei.modelo.dao.UsuarioStaffDAO;
+import com.mycompany.bibliotecafei.modelo.pojo.UsuarioStaff;
+import com.mycompany.bibliotecafei.util.ShaConversor;
+import javax.swing.JOptionPane;
+
 /**
  *
  * @author Zinedinne
@@ -35,7 +40,7 @@ public class GUILogin extends javax.swing.JFrame {
         tfUsuario = new javax.swing.JTextField();
         lblPassword = new javax.swing.JLabel();
         pfPassword = new javax.swing.JPasswordField();
-        jButton1 = new javax.swing.JButton();
+        btnEntrar = new javax.swing.JButton();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
 
@@ -106,10 +111,16 @@ public class GUILogin extends javax.swing.JFrame {
         });
         jPanel1.add(pfPassword, new org.netbeans.lib.awtextra.AbsoluteConstraints(320, 380, 490, -1));
 
-        jButton1.setBackground(new java.awt.Color(0, 153, 0));
-        jButton1.setForeground(new java.awt.Color(255, 255, 255));
-        jButton1.setText("Entrar");
-        jPanel1.add(jButton1, new org.netbeans.lib.awtextra.AbsoluteConstraints(500, 470, 120, 40));
+        btnEntrar.setBackground(new java.awt.Color(0, 153, 0));
+        btnEntrar.setFont(new java.awt.Font("Segoe UI", 1, 12)); // NOI18N
+        btnEntrar.setForeground(new java.awt.Color(255, 255, 255));
+        btnEntrar.setText("Entrar");
+        btnEntrar.addMouseListener(new java.awt.event.MouseAdapter() {
+            public void mouseClicked(java.awt.event.MouseEvent evt) {
+                btnEntrarMouseClicked(evt);
+            }
+        });
+        jPanel1.add(btnEntrar, new org.netbeans.lib.awtextra.AbsoluteConstraints(500, 470, 120, 40));
 
         javax.swing.GroupLayout layout = new javax.swing.GroupLayout(getContentPane());
         getContentPane().setLayout(layout);
@@ -142,6 +153,30 @@ public class GUILogin extends javax.swing.JFrame {
         if(pfPassword.getText().equals("Password")){pfPassword.setText("");}
         if(tfUsuario.getText().equals("")){tfUsuario.setText("Usuario");}
     }//GEN-LAST:event_pfPasswordMouseClicked
+
+    private void btnEntrarMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_btnEntrarMouseClicked
+        ShaConversor shaConversor = new ShaConversor();
+       //System.out.println(shaConversor.convertir("hola"));
+       
+       
+       UsuarioStaffDAO usuarioDao = new UsuarioStaffDAO();
+       UsuarioStaff usuario = new UsuarioStaff();
+       UsuarioStaff usuarioLogeado = new UsuarioStaff();
+    
+        usuario.setNombreUsuario(tfUsuario.getText());
+        char[] arregloContrasena = pfPassword.getPassword();
+        String contrasena = new String(arregloContrasena);
+        usuario.setPassword(shaConversor.convertir(contrasena));
+        usuarioLogeado = usuarioDao.accederSistema(usuario);
+        System.out.println(usuarioLogeado);  
+        System.out.println(usuarioLogeado.getTipoUsuario()); 
+        GUIPrincipalBibliotecario principal = new GUIPrincipalBibliotecario();
+        if(usuarioLogeado.getTipoUsuario().equals("bibliotecario")){
+            principal.setVisible(true);
+        }else{
+            JOptionPane.showMessageDialog(null,"Revisa las credenciales");
+        }
+    }//GEN-LAST:event_btnEntrarMouseClicked
 
     /**
      * @param args the command line arguments
@@ -179,7 +214,7 @@ public class GUILogin extends javax.swing.JFrame {
     }
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
-    private javax.swing.JButton jButton1;
+    private javax.swing.JButton btnEntrar;
     private javax.swing.JPanel jPanel1;
     private javax.swing.JLabel lblFooter;
     private javax.swing.JLabel lblHeader;
