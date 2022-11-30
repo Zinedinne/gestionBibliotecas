@@ -23,7 +23,6 @@ public class GUIRegistrarRecurso extends javax.swing.JFrame {
     public GUIRegistrarRecurso() {
         initComponents();
         setLocationRelativeTo(null);
-        this.setDefaultCloseOperation(HIDE_ON_CLOSE);
     }
 
     /**
@@ -56,7 +55,6 @@ public class GUIRegistrarRecurso extends javax.swing.JFrame {
         cbProcedencia = new javax.swing.JComboBox<>();
         jLabel9 = new javax.swing.JLabel();
 
-        setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
         setResizable(false);
 
         panelContenedor.setBackground(new java.awt.Color(255, 255, 255));
@@ -95,7 +93,7 @@ public class GUIRegistrarRecurso extends javax.swing.JFrame {
             }
         });
 
-        buttonCancelar.setBackground(new java.awt.Color(0, 81, 158));
+        buttonCancelar.setBackground(new java.awt.Color(0, 148, 0));
         buttonCancelar.addMouseListener(new java.awt.event.MouseAdapter() {
             public void mouseClicked(java.awt.event.MouseEvent evt) {
                 buttonCancelarMouseClicked(evt);
@@ -134,7 +132,7 @@ public class GUIRegistrarRecurso extends javax.swing.JFrame {
 
         jLabel4.setText("Descripcion");
 
-        buttonRegistrar.setBackground(new java.awt.Color(0, 81, 158));
+        buttonRegistrar.setBackground(new java.awt.Color(0, 148, 0));
         buttonRegistrar.addMouseListener(new java.awt.event.MouseAdapter() {
             public void mouseClicked(java.awt.event.MouseEvent evt) {
                 buttonRegistrarMouseClicked(evt);
@@ -372,11 +370,11 @@ public class GUIRegistrarRecurso extends javax.swing.JFrame {
     }
     
     private void animacionPasarMouse(JPanel panelAnimacion){
-        panelAnimacion.setBackground(new java.awt.Color(87, 145, 195));
+        panelAnimacion.setBackground(new java.awt.Color(85,186,85));
     }
     
     private  void animacionSalirMouse(JPanel panelAnimacion){
-        panelAnimacion.setBackground(new java.awt.Color(0,81,158));
+        panelAnimacion.setBackground(new java.awt.Color(0,148,0));
     }
     
     private boolean hayCamposVacios(){
