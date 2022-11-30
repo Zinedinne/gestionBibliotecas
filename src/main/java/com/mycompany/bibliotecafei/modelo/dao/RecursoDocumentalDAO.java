@@ -17,13 +17,32 @@ import java.util.ArrayList;
  * @author super
  */
 public class RecursoDocumentalDAO {
-    public static ArrayList<RecursoDocumental> busquedaRecursoPorNombre(String titulo) throws SQLException{
-        ArrayList<RecursoDocumental> recursosEncontrados = null;
+    
+    public static ArrayList<RecursoDocumental> recuperarRecursos() throws SQLException{
+        ArrayList<RecursoDocumental> recursosEncontrados = new ArrayList<>();
         Connection conexionBD = DataBaseConnection.getConnection();
-//        try {
-//            
-//        } catch (SQLException e) {
-//        }
+        try {
+            if(conexionBD != null){
+                String busqueda = "SELECT folio, titulo, autor, estado, seccion, tipo_recurso, "
+                        + "procedencia FROM recurso_documental";
+                PreparedStatement busquedaPreparada  = conexionBD.prepareStatement(busqueda);
+                ResultSet resultados = busquedaPreparada.executeQuery();
+                while(resultados.next()){
+                    RecursoDocumental recursoResultado = new RecursoDocumental();
+                    recursoResultado.setIdRecursoDocumental(resultados.getString("folio"));
+                    recursoResultado.setAutor(resultados.getString("autor"));
+                    recursoResultado.setNombre(resultados.getString("titulo"));
+                    recursoResultado.setEstado(resultados.getString("estado"));
+                    recursoResultado.setSeccion(resultados.getString("seccion"));
+                    recursoResultado.setTipoRecurso(resultados.getString("tipo_recurso"));
+                    recursoResultado.setProcedencia(resultados.getString("procedencia"));
+                    
+                    recursosEncontrados.add(recursoResultado);
+                }
+            }
+        } catch (SQLException e) {
+            e.printStackTrace();
+        }
         return recursosEncontrados;
     }
     
@@ -43,7 +62,7 @@ public class RecursoDocumentalDAO {
                     consultaPreparada.setString(3, nuevoRecurso.getTipoRecurso());
                     consultaPreparada.setString(4, nuevoRecurso.getSeccion());
                     consultaPreparada.setString(5, nuevoRecurso.getProcedencia());
-                    consultaPreparada.setString(6, "disponible");
+                    consultaPreparada.setString(6, "Disponible");
                     consultaPreparada.setString(7, nuevoRecurso.getDescripcion());
                     consultaPreparada.setString(8, nuevoRecurso.getAutor());
                     consultaPreparada.execute();
