@@ -28,7 +28,15 @@ public class UsuarioStaff {
     public void setNombreUsuarioStaff(String nombreUsuarioStaff) {
         this.nombreUsuarioStaff = nombreUsuarioStaff;
     }
+    
+     public String getTipoUsuario() {
+        return tipoUsuario;
+    }
 
+    public void setTipoUsuario(String tipoUsuario) {
+        this.tipoUsuario = tipoUsuario;
+    }
+    
     public String getNombreUsuario() {
         return nombreUsuario;
     }
